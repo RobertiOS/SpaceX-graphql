@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8062292D2E0D0009B939 /* AppDelegate.swift */; };
 		E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8064292D2E0D0009B939 /* SceneDelegate.swift */; };
-		E14E8067292D2E0D0009B939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8066292D2E0D0009B939 /* ViewController.swift */; };
-		E14E806A292D2E0D0009B939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E8068292D2E0D0009B939 /* Main.storyboard */; };
+		E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8066292D2E0D0009B939 /* MainListViewController.swift */; };
 		E14E806D292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E14E806B292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld */; };
 		E14E806F292D2E140009B939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14E806E292D2E140009B939 /* Assets.xcassets */; };
 		E14E8072292D2E140009B939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E8070292D2E140009B939 /* LaunchScreen.storyboard */; };
+		E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8079292D2FEF0009B939 /* Coordinator.swift */; };
+		E14E8082292D34920009B939 /* MainListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8081292D34920009B939 /* MainListCoordinator.swift */; };
+		E14E8084292D35F80009B939 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8083292D35F80009B939 /* Router.swift */; };
+		E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8085292D38040009B939 /* AppCoordinator.swift */; };
+		E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8087292D3BAD0009B939 /* MainListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E8062292D2E0D0009B939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14E8064292D2E0D0009B939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E14E8066292D2E0D0009B939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E14E8069292D2E0D0009B939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E14E8066292D2E0D0009B939 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		E14E806C292D2E0D0009B939 /* FruitsGraphQL.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FruitsGraphQL.xcdatamodel; sourceTree = "<group>"; };
 		E14E806E292D2E140009B939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14E8071292D2E140009B939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14E8073292D2E140009B939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14E8079292D2FEF0009B939 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E14E8081292D34920009B939 /* MainListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCoordinator.swift; sourceTree = "<group>"; };
+		E14E8083292D35F80009B939 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E14E8085292D38040009B939 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E14E8087292D3BAD0009B939 /* MainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,36 @@
 		E14E8061292D2E0D0009B939 /* FruitsGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				E14E807F292D346D0009B939 /* Views */,
 				E14E8062292D2E0D0009B939 /* AppDelegate.swift */,
 				E14E8064292D2E0D0009B939 /* SceneDelegate.swift */,
-				E14E8066292D2E0D0009B939 /* ViewController.swift */,
-				E14E8068292D2E0D0009B939 /* Main.storyboard */,
 				E14E806E292D2E140009B939 /* Assets.xcassets */,
 				E14E8070292D2E140009B939 /* LaunchScreen.storyboard */,
 				E14E8073292D2E140009B939 /* Info.plist */,
 				E14E806B292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld */,
+				E14E8079292D2FEF0009B939 /* Coordinator.swift */,
+				E14E8083292D35F80009B939 /* Router.swift */,
+				E14E8085292D38040009B939 /* AppCoordinator.swift */,
 			);
 			path = FruitsGraphQL;
+			sourceTree = "<group>";
+		};
+		E14E807F292D346D0009B939 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E14E8080292D34790009B939 /* MainList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E14E8080292D34790009B939 /* MainList */ = {
+			isa = PBXGroup;
+			children = (
+				E14E8081292D34920009B939 /* MainListCoordinator.swift */,
+				E14E8066292D2E0D0009B939 /* MainListViewController.swift */,
+				E14E8087292D3BAD0009B939 /* MainListViewModel.swift */,
+			);
+			path = MainList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,12 +108,15 @@
 				E14E805B292D2E0D0009B939 /* Sources */,
 				E14E805C292D2E0D0009B939 /* Frameworks */,
 				E14E805D292D2E0D0009B939 /* Resources */,
+				E14E807E292D30BF0009B939 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FruitsGraphQL;
+			packageProductDependencies = (
+			);
 			productName = FruitsGraphQL;
 			productReference = E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +145,8 @@
 				Base,
 			);
 			mainGroup = E14E8056292D2E0D0009B939;
+			packageReferences = (
+			);
 			productRefGroup = E14E8060292D2E0D0009B939 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,35 +163,52 @@
 			files = (
 				E14E8072292D2E140009B939 /* LaunchScreen.storyboard in Resources */,
 				E14E806F292D2E140009B939 /* Assets.xcassets in Resources */,
-				E14E806A292D2E0D0009B939 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E14E807E292D30BF0009B939 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E14E805B292D2E0D0009B939 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E14E8067292D2E0D0009B939 /* ViewController.swift in Sources */,
+				E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */,
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
+				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
+				E14E8084292D35F80009B939 /* Router.swift in Sources */,
+				E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */,
+				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
 				E14E806D292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld in Sources */,
 				E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */,
+				E14E8082292D34920009B939 /* MainListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E14E8068292D2E0D0009B939 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E14E8069292D2E0D0009B939 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E14E8070292D2E140009B939 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
