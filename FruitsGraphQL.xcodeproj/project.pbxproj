@@ -18,6 +18,8 @@
 		E14E8084292D35F80009B939 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8083292D35F80009B939 /* Router.swift */; };
 		E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8085292D38040009B939 /* AppCoordinator.swift */; };
 		E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8087292D3BAD0009B939 /* MainListViewModel.swift */; };
+		E14E808B292D49900009B939 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E14E808A292D49900009B939 /* Apollo */; };
+		E14E808D292D49900009B939 /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E14E808C292D49900009B939 /* ApolloSQLite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14E808B292D49900009B939 /* Apollo in Frameworks */,
+				E14E808D292D49900009B939 /* ApolloSQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +120,8 @@
 			);
 			name = FruitsGraphQL;
 			packageProductDependencies = (
+				E14E808A292D49900009B939 /* Apollo */,
+				E14E808C292D49900009B939 /* ApolloSQLite */,
 			);
 			productName = FruitsGraphQL;
 			productReference = E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */;
@@ -146,6 +152,7 @@
 			);
 			mainGroup = E14E8056292D2E0D0009B939;
 			packageReferences = (
+				E14E8089292D49900009B939 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = E14E8060292D2E0D0009B939 /* Products */;
 			projectDirPath = "";
@@ -412,6 +419,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E14E8089292D49900009B939 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E14E808A292D49900009B939 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E14E8089292D49900009B939 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		E14E808C292D49900009B939 /* ApolloSQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E14E8089292D49900009B939 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloSQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E14E806B292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld */ = {
