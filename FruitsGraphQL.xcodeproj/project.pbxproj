@@ -20,6 +20,7 @@
 		E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8087292D3BAD0009B939 /* MainListViewModel.swift */; };
 		E14E8096292D4BC10009B939 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8095292D4BC10009B939 /* API.swift */; };
 		E14E8098292D4C010009B939 /* AllFruits.graphql in Resources */ = {isa = PBXBuildFile; fileRef = E14E8097292D4C010009B939 /* AllFruits.graphql */; };
+		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		E14E8087292D3BAD0009B939 /* MainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewModel.swift; sourceTree = "<group>"; };
 		E14E8095292D4BC10009B939 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E14E8097292D4C010009B939 /* AllFruits.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllFruits.graphql; sourceTree = "<group>"; };
+		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +74,16 @@
 		E14E8061292D2E0D0009B939 /* FruitsGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				E17D4C0E292F237A00F70601 /* Navigation */,
 				E14E808E292D4A420009B939 /* Networking */,
 				E14E807F292D346D0009B939 /* Views */,
 				E14E8062292D2E0D0009B939 /* AppDelegate.swift */,
 				E14E8064292D2E0D0009B939 /* SceneDelegate.swift */,
+				E14E8085292D38040009B939 /* AppCoordinator.swift */,
 				E14E806E292D2E140009B939 /* Assets.xcassets */,
 				E14E8070292D2E140009B939 /* LaunchScreen.storyboard */,
 				E14E8073292D2E140009B939 /* Info.plist */,
 				E14E806B292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld */,
-				E14E8079292D2FEF0009B939 /* Coordinator.swift */,
-				E14E8083292D35F80009B939 /* Router.swift */,
-				E14E8085292D38040009B939 /* AppCoordinator.swift */,
 			);
 			path = FruitsGraphQL;
 			sourceTree = "<group>";
@@ -128,6 +129,16 @@
 				E14E8095292D4BC10009B939 /* API.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		E17D4C0E292F237A00F70601 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E14E8079292D2FEF0009B939 /* Coordinator.swift */,
+				E14E8083292D35F80009B939 /* Router.swift */,
+				E17D4C0F292F23CE00F70601 /* AppTransition.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
 				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
 				E14E8084292D35F80009B939 /* Router.swift in Sources */,
+				E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */,
 				E14E8096292D4BC10009B939 /* API.swift in Sources */,
 				E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */,
 				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
