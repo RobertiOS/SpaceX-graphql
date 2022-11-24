@@ -21,6 +21,7 @@
 		E14E8096292D4BC10009B939 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8095292D4BC10009B939 /* API.swift */; };
 		E14E8098292D4C010009B939 /* AllFruits.graphql in Resources */ = {isa = PBXBuildFile; fileRef = E14E8097292D4C010009B939 /* AllFruits.graphql */; };
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
+		E17D4C12292F286D00F70601 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C11292F286D00F70601 /* APIManager.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		E14E8095292D4BC10009B939 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E14E8097292D4C010009B939 /* AllFruits.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllFruits.graphql; sourceTree = "<group>"; };
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
+		E17D4C11292F286D00F70601 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E14E8095292D4BC10009B939 /* API.swift */,
+				E17D4C11292F286D00F70601 /* APIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17D4C12292F286D00F70601 /* APIManager.swift in Sources */,
 				E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */,
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
 				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
