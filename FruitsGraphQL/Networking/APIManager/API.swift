@@ -4,20 +4,29 @@
 import Apollo
 import Foundation
 
-public final class AllFruitsQuery: GraphQLQuery {
+public final class LaunchListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query AllFruits {
-      fruits {
+    query LaunchList {
+      launches {
         __typename
-        id
-        fruit_name
+        cursor
+        hasMore
+        launches {
+          __typename
+          id
+          site
+          mission {
+            __typename
+            missionPatch
+          }
+        }
       }
     }
     """
 
-  public let operationName: String = "AllFruits"
+  public let operationName: String = "LaunchList"
 
   public init() {
   }
@@ -27,7 +36,7 @@ public final class AllFruitsQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("fruits", type: .list(.object(Fruit.selections))),
+        GraphQLField("launches", type: .nonNull(.object(Launch.selections))),
       ]
     }
 
@@ -37,27 +46,28 @@ public final class AllFruitsQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(fruits: [Fruit?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "fruits": fruits.flatMap { (value: [Fruit?]) -> [ResultMap?] in value.map { (value: Fruit?) -> ResultMap? in value.flatMap { (value: Fruit) -> ResultMap in value.resultMap } } }])
+    public init(launches: Launch) {
+      self.init(unsafeResultMap: ["__typename": "Query", "launches": launches.resultMap])
     }
 
-    public var fruits: [Fruit?]? {
+    public var launches: Launch {
       get {
-        return (resultMap["fruits"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Fruit?] in value.map { (value: ResultMap?) -> Fruit? in value.flatMap { (value: ResultMap) -> Fruit in Fruit(unsafeResultMap: value) } } }
+        return Launch(unsafeResultMap: resultMap["launches"]! as! ResultMap)
       }
       set {
-        resultMap.updateValue(newValue.flatMap { (value: [Fruit?]) -> [ResultMap?] in value.map { (value: Fruit?) -> ResultMap? in value.flatMap { (value: Fruit) -> ResultMap in value.resultMap } } }, forKey: "fruits")
+        resultMap.updateValue(newValue.resultMap, forKey: "launches")
       }
     }
 
-    public struct Fruit: GraphQLSelectionSet {
-      public static let possibleTypes: [String] = ["Fruits"]
+    public struct Launch: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["LaunchConnection"]
 
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
-          GraphQLField("fruit_name", type: .scalar(String.self)),
+          GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
+          GraphQLField("hasMore", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections)))),
         ]
       }
 
@@ -67,8 +77,8 @@ public final class AllFruitsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fruitName: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName])
+      public init(cursor: String, hasMore: Bool, launches: [Launch?]) {
+        self.init(unsafeResultMap: ["__typename": "LaunchConnection", "cursor": cursor, "hasMore": hasMore, "launches": launches.map { (value: Launch?) -> ResultMap? in value.flatMap { (value: Launch) -> ResultMap in value.resultMap } }])
       }
 
       public var __typename: String {
@@ -80,21 +90,128 @@ public final class AllFruitsQuery: GraphQLQuery {
         }
       }
 
-      public var id: GraphQLID? {
+      public var cursor: String {
         get {
-          return resultMap["id"] as? GraphQLID
+          return resultMap["cursor"]! as! String
         }
         set {
-          resultMap.updateValue(newValue, forKey: "id")
+          resultMap.updateValue(newValue, forKey: "cursor")
         }
       }
 
-      public var fruitName: String? {
+      public var hasMore: Bool {
         get {
-          return resultMap["fruit_name"] as? String
+          return resultMap["hasMore"]! as! Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "fruit_name")
+          resultMap.updateValue(newValue, forKey: "hasMore")
+        }
+      }
+
+      public var launches: [Launch?] {
+        get {
+          return (resultMap["launches"] as! [ResultMap?]).map { (value: ResultMap?) -> Launch? in value.flatMap { (value: ResultMap) -> Launch in Launch(unsafeResultMap: value) } }
+        }
+        set {
+          resultMap.updateValue(newValue.map { (value: Launch?) -> ResultMap? in value.flatMap { (value: Launch) -> ResultMap in value.resultMap } }, forKey: "launches")
+        }
+      }
+
+      public struct Launch: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Launch"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("site", type: .scalar(String.self)),
+            GraphQLField("mission", type: .object(Mission.selections)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, site: String? = nil, mission: Mission? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "site": site, "mission": mission.flatMap { (value: Mission) -> ResultMap in value.resultMap }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var site: String? {
+          get {
+            return resultMap["site"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "site")
+          }
+        }
+
+        public var mission: Mission? {
+          get {
+            return (resultMap["mission"] as? ResultMap).flatMap { Mission(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "mission")
+          }
+        }
+
+        public struct Mission: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Mission"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("missionPatch", type: .scalar(String.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(missionPatch: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Mission", "missionPatch": missionPatch])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var missionPatch: String? {
+            get {
+              return resultMap["missionPatch"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "missionPatch")
+            }
+          }
         }
       }
     }
