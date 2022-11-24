@@ -9,8 +9,16 @@ import UIKit
 import Combine
 
 class MainListViewController: UITableViewController {
+    typealias Fruit = AllFruitsQuery.Data.Fruit
     let viewModel: MainListViewModel
-    var fruits: [AllFruitsQuery.Data.Fruit] = []
+
+    enum Section: CaseIterable {
+        case main
+    }
+
+    typealias DataSource = UITableViewDiffableDataSource<Section, Fruit>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Fruit>
+    var dataSource: DataSource?
 
     init(viewModel: MainListViewModel) {
         self.viewModel = viewModel
@@ -31,18 +39,25 @@ class MainListViewController: UITableViewController {
     private func setUI() {
         title = "Fruits"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
+        setUpDataSource()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fruits.count
+    func setUpDataSource() {
+        dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier -> UITableViewCell? in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")!
+            var contentConfiguration = cell.defaultContentConfiguration()
+            contentConfiguration.text = itemIdentifier.fruitName
+            cell.contentConfiguration = contentConfiguration
+            return cell
+        }
+        
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")!
-        var contentConfiguration = cell.defaultContentConfiguration()
-        contentConfiguration.text = fruits[indexPath.row].fruitName
-        cell.contentConfiguration = contentConfiguration
-        return cell
+    func applySnapshot(items: [Fruit]) {
+        var snapShot = Snapshot()
+        snapShot.appendSections(Section.allCases)
+        snapShot.appendItems(items)
+        dataSource?.apply(snapShot, animatingDifferences: true)
     }
 
 }
@@ -57,17 +72,25 @@ extension MainListViewController: Subscriber {
     }
 
     func receive(_ input: [AllFruitsQuery.Data.Fruit]) -> Subscribers.Demand {
-        fruits = input
-        tableView.reloadData()
+        applySnapshot(items: input)
         return .max(1)
     }
 
     func receive(completion: Subscribers.Completion<Failure>) {
-        let alert = UIAlertController()
-        alert.title = "Error"
-        alert.message = "\(completion)"
+        let alert = UIAlertController(title: "Error", message: "\(completion)",preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
-        self.present(alert, animated: true)
+        present(alert, animated: true)
+    }
+
+}
+
+extension FruitsGraphQL.AllFruitsQuery.Data.Fruit: Hashable {
+    public static func == (lhs: AllFruitsQuery.Data.Fruit, rhs: AllFruitsQuery.Data.Fruit) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 
 }
