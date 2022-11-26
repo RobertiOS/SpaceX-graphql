@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10F4130293279650024671E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E10F4132293279650024671E /* Localizable.strings */; };
 		E11150FA292FD1520041CB2B /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = E11150F9292FD1510041CB2B /* schema.graphqls */; };
 		E11151002930128A0041CB2B /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11150FF2930128A0041CB2B /* TypeAliases.swift */; };
 		E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8062292D2E0D0009B939 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10F4131293279650024671E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E11150F9292FD1510041CB2B /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		E11150FF2930128A0041CB2B /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E10F412D2932794B0024671E /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E10F4132293279650024671E /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		E11150FE293012730041CB2B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		E14E8061292D2E0D0009B939 /* FruitsGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				E10F412D2932794B0024671E /* Localization */,
 				E11150FE293012730041CB2B /* Helper */,
 				E11150F9292FD1510041CB2B /* schema.graphqls */,
 				E17D4C0E292F237A00F70601 /* Navigation */,
@@ -233,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10F4130293279650024671E /* Localizable.strings in Resources */,
 				E11150FA292FD1520041CB2B /* schema.graphqls in Resources */,
 				E14E8072292D2E140009B939 /* LaunchScreen.storyboard in Resources */,
 				E14E8098292D4C010009B939 /* LaunchList.graphql in Resources */,
@@ -287,6 +299,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E10F4132293279650024671E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E10F4131293279650024671E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E14E8070292D2E140009B939 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

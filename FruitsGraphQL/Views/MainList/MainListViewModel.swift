@@ -13,6 +13,7 @@ import OrderedCollections
 protocol MainListViewModelRepresentable: AnyObject {
     var launchesListSubject: PassthroughSubject<[Launch], Error> { get set }
     func loadMoreLaunches()
+    func search(text: String?)
 }
 
 final class MainListViewModel: MainListViewModelRepresentable {
@@ -56,6 +57,20 @@ final class MainListViewModel: MainListViewModelRepresentable {
                 self?.launchesListSubject.send(completion: .failure(error))
             }
         }
+    }
+    
+    func search(text: String?) {
+        guard let text = text,
+        !text.isEmpty else {
+            launchesListSubject.send(launches)
+            return
+        }
+        
+        let launches = launches.filter { launch in
+            launch.site?.localizedCaseInsensitiveContains(text) ?? false
+        }
+        
+        launchesListSubject.send(launches)
     }
     
 }

@@ -16,6 +16,8 @@ class MainListViewController: UITableViewController {
         case main
     }
 
+    private let searchController = UISearchController()
+
     typealias DataSource = UITableViewDiffableDataSource<Section, Launch>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Launch>
 
@@ -43,8 +45,15 @@ class MainListViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
         tableView.prefetchDataSource = self
         setUpDataSource()
+        setUpSearchController()
     }
     
+    private func setUpSearchController() {
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = NSLocalizedString("place_holder_search_bar", comment: "place holder text on a search bar")
+    }
+
     func setUpDataSource() {
         dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")!
@@ -86,6 +95,12 @@ extension MainListViewController: Subscriber {
         present(alert, animated: true)
     }
 
+}
+
+extension MainListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.search(text: searchController.searchBar.text)
+    }
 }
 
 extension MainListViewController: UITableViewDataSourcePrefetching {
