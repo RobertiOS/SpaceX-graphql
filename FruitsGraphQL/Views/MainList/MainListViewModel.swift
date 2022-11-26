@@ -8,32 +8,50 @@
 import Foundation
 import Apollo
 import Combine
+import OrderedCollections
 
 protocol MainListViewModelRepresentable: AnyObject {
     var launchesListSubject: PassthroughSubject<[Launch], Error> { get set }
+    func loadMoreLaunches()
 }
 
 final class MainListViewModel: MainListViewModelRepresentable {
    
-    let apolloCLient: ApolloClient
+    private let apolloCLient: ApolloClient
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
-    var launches = [Launch]() {
+    private var lastConnection: LaunchListQuery.Data.Launch?
+    private var activeRequest: Apollo.Cancellable?
+    private var launches = [Launch]() {
         didSet {
-            launchesListSubject.send(launches)
+            var set = OrderedSet<Launch>()
+            set.append(contentsOf: launches)
+            launchesListSubject.send(Array(set))
         }
     }
     
     init(apolloCLient: ApolloClient = APIManager.shared.apolloClient) {
         self.apolloCLient = apolloCLient
-        loadData()
+        loadMoreLaunches()
     }
     
-    func loadData() {
-        apolloCLient.fetch(query: LaunchListQuery()) { [weak self] result in
+    func loadMoreLaunches() {
+        guard let lastConnection = lastConnection else {
+            loadData(from: nil)
+            return
+        }
+        
+        guard lastConnection.hasMore else { return }
+        loadData(from: lastConnection.cursor)
+    }
+    
+    func loadData(from cursor: String?) {
+        apolloCLient.fetch(query: LaunchListQuery(after: cursor)) { [weak self] result in
+            self?.activeRequest = nil
             switch result {
             case .success(let data):
                 guard let launches = data.data?.launches.launches.compactMap({ $0 }) else { return }
                 self?.launches.append(contentsOf: launches)
+                self?.lastConnection = data.data?.launches
             case .failure(let error):
                 self?.launchesListSubject.send(completion: .failure(error))
             }

@@ -39,8 +39,9 @@ class MainListViewController: UITableViewController {
     }
     
     private func setUI() {
-        title = "Fruits"
+        title = "Launches"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
+        tableView.prefetchDataSource = self
         setUpDataSource()
     }
     
@@ -87,7 +88,15 @@ extension MainListViewController: Subscriber {
 
 }
 
+extension MainListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        viewModel.loadMoreLaunches()
+        debugPrint(indexPaths)
+    }
+}
+
 extension LaunchListQuery.Data.Launch.Launch: Hashable {
+
     public static func == (lhs: LaunchListQuery.Data.Launch.Launch, rhs: LaunchListQuery.Data.Launch.Launch) -> Bool {
         lhs.id == rhs.id
     }

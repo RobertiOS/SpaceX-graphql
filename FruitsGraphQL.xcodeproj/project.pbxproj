@@ -25,6 +25,9 @@
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
 		E17D4C12292F286D00F70601 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C11292F286D00F70601 /* APIManager.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
+		E1A7D2AD293265A000C25F83 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AC293265A000C25F83 /* Collections */; };
+		E1A7D2AF293265A000C25F83 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AE293265A000C25F83 /* DequeModule */; };
+		E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2B0293265A000C25F83 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +57,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A7D2AD293265A000C25F83 /* Collections in Frameworks */,
 				E19C5804292D6B36004C7205 /* Apollo in Frameworks */,
+				E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */,
+				E1A7D2AF293265A000C25F83 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +183,9 @@
 			name = FruitsGraphQL;
 			packageProductDependencies = (
 				E19C5803292D6B36004C7205 /* Apollo */,
+				E1A7D2AC293265A000C25F83 /* Collections */,
+				E1A7D2AE293265A000C25F83 /* DequeModule */,
+				E1A7D2B0293265A000C25F83 /* OrderedCollections */,
 			);
 			productName = FruitsGraphQL;
 			productReference = E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */;
@@ -208,6 +217,7 @@
 			mainGroup = E14E8056292D2E0D0009B939;
 			packageReferences = (
 				E19C5802292D6B36004C7205 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				E1A7D2AB293265A000C25F83 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = E14E8060292D2E0D0009B939 /* Products */;
 			projectDirPath = "";
@@ -414,7 +424,7 @@
 				INFOPLIST_FILE = FruitsGraphQL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -442,7 +452,7 @@
 				INFOPLIST_FILE = FruitsGraphQL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +500,14 @@
 				minimumVersion = 0.51.0;
 			};
 		};
+		E1A7D2AB293265A000C25F83 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -497,6 +515,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E19C5802292D6B36004C7205 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		E1A7D2AC293265A000C25F83 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A7D2AB293265A000C25F83 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		E1A7D2AE293265A000C25F83 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A7D2AB293265A000C25F83 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		E1A7D2B0293265A000C25F83 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A7D2AB293265A000C25F83 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 
