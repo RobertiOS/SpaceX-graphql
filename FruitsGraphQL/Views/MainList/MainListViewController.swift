@@ -10,7 +10,7 @@ import Combine
 
 class MainListViewController: UITableViewController {
     typealias Launch = LaunchListQuery.Data.Launch.Launch
-    let viewModel: MainListViewModel
+    let viewModel: MainListViewModelRepresentable
 
     enum Section: CaseIterable {
         case main
@@ -33,7 +33,8 @@ class MainListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel.foodListSubject.subscribe(self)
+        viewModel.launchesListSubject.subscribe(self)
+        
         setUI()
     }
     

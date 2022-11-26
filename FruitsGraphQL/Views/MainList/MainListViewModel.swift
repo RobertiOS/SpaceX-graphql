@@ -9,10 +9,19 @@ import Foundation
 import Apollo
 import Combine
 
-final class MainListViewModel {
-    typealias Launch = LaunchListQuery.Data.Launch.Launch
+protocol MainListViewModelRepresentable: AnyObject {
+    var launchesListSubject: PassthroughSubject<[Launch], Error> { get set }
+}
+
+final class MainListViewModel: MainListViewModelRepresentable {
+   
     let apolloCLient: ApolloClient
-    let foodListSubject = PassthroughSubject<[Launch], Error>()
+    var launchesListSubject = PassthroughSubject<[Launch], Error>()
+    var launches = [Launch]() {
+        didSet {
+            launchesListSubject.send(launches)
+        }
+    }
     
     init(apolloCLient: ApolloClient = APIManager.shared.apolloClient) {
         self.apolloCLient = apolloCLient
@@ -24,9 +33,9 @@ final class MainListViewModel {
             switch result {
             case .success(let data):
                 guard let launches = data.data?.launches.launches.compactMap({ $0 }) else { return }
-                self?.foodListSubject.send(launches)
+                self?.launches.append(contentsOf: launches)
             case .failure(let error):
-                self?.foodListSubject.send(completion: .failure(error))
+                self?.launchesListSubject.send(completion: .failure(error))
             }
         }
     }
