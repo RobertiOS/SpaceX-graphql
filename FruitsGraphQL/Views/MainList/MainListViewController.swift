@@ -9,15 +9,18 @@ import UIKit
 import Combine
 
 class MainListViewController: UITableViewController {
-    typealias Fruit = AllFruitsQuery.Data.Fruit
-    let viewModel: MainListViewModel
+    typealias Launch = LaunchListQuery.Data.Launch.Launch
+    let viewModel: MainListViewModelRepresentable
 
     enum Section: CaseIterable {
         case main
     }
 
-    typealias DataSource = UITableViewDiffableDataSource<Section, Fruit>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Fruit>
+    private let searchController = UISearchController()
+
+    typealias DataSource = UITableViewDiffableDataSource<Section, Launch>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Launch>
+
     var dataSource: DataSource?
 
     init(viewModel: MainListViewModel) {
@@ -32,28 +35,38 @@ class MainListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel.foodListSubject.subscribe(self)
+        viewModel.launchesListSubject.subscribe(self)
+        
         setUI()
     }
     
     private func setUI() {
-        title = "Fruits"
+        title = "Launches"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
+        tableView.prefetchDataSource = self
         setUpDataSource()
+        setUpSearchController()
     }
     
+    private func setUpSearchController() {
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = NSLocalizedString("place_holder_search_bar", comment: "place holder text on a search bar")
+    }
+
     func setUpDataSource() {
         dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")!
             var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = itemIdentifier.fruitName
+            contentConfiguration.text = itemIdentifier.site
+            contentConfiguration.secondaryText = itemIdentifier.id
             cell.contentConfiguration = contentConfiguration
             return cell
         }
         
     }
     
-    func applySnapshot(items: [Fruit]) {
+    func applySnapshot(items: [Launch]) {
         var snapShot = Snapshot()
         snapShot.appendSections(Section.allCases)
         snapShot.appendItems(items)
@@ -64,14 +77,14 @@ class MainListViewController: UITableViewController {
 
 extension MainListViewController: Subscriber {
 
-    typealias Input = [AllFruitsQuery.Data.Fruit]
+    typealias Input = [Launch]
     typealias Failure = Error
 
     func receive(subscription: Subscription) {
         subscription.request(.max(1))
     }
 
-    func receive(_ input: [AllFruitsQuery.Data.Fruit]) -> Subscribers.Demand {
+    func receive(_ input: [Launch]) -> Subscribers.Demand {
         applySnapshot(items: input)
         return .max(1)
     }
@@ -84,8 +97,22 @@ extension MainListViewController: Subscriber {
 
 }
 
-extension FruitsGraphQL.AllFruitsQuery.Data.Fruit: Hashable {
-    public static func == (lhs: AllFruitsQuery.Data.Fruit, rhs: AllFruitsQuery.Data.Fruit) -> Bool {
+extension MainListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.search(text: searchController.searchBar.text)
+    }
+}
+
+extension MainListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        viewModel.loadMoreLaunches()
+        debugPrint(indexPaths)
+    }
+}
+
+extension LaunchListQuery.Data.Launch.Launch: Hashable {
+
+    public static func == (lhs: LaunchListQuery.Data.Launch.Launch, rhs: LaunchListQuery.Data.Launch.Launch) -> Bool {
         lhs.id == rhs.id
     }
 

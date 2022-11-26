@@ -1,6 +1,0 @@
-query AllFruits {
-  fruits {
-    id
-    fruit_name
-  }
-}

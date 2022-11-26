@@ -10,5 +10,5 @@ import Apollo
 
 final class APIManager {
     static let shared = APIManager()
-    let apolloClient = ApolloClient(url: URL(string: "https://fruits-api.netlify.app/graphql")!)
+    let apolloClient = ApolloClient(url: URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql/graphql")!)
 }
