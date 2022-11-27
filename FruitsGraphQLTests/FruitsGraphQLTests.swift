@@ -39,8 +39,8 @@ final class FruitsGraphQLTests: XCTestCase {
         let expectation = expectation(description: "Wait for load data subject")
         let cancellable = viewModelRepresentable.launchesListSubject.sink { _ in
             
-        } receiveValue: { launch in
-            XCTAssert(launch.isEmpty == false)
+        } receiveValue: { launches in
+            XCTAssert(launches.isEmpty == false)
             expectation.fulfill()
         }
 
@@ -49,23 +49,36 @@ final class FruitsGraphQLTests: XCTestCase {
     }
     
     func testSearchData() {
-        //given
-        let expectation = expectation(description: "Wait for loading data")
-        viewModelRepresentable.loadMoreLaunches()
-        //when
-        viewModelRepresentable.search(text: "Vafb slc 4e")
-//        let searchingExpectation = expectation(description: "Wait searching data")
-//        expectation(description: "")
         
-        let _ = viewModelRepresentable.launchesListSubject.sink { _ in
-            
+        let searchText = "VAFB SLC 4E"
+        
+        let expectation = XCTestExpectation(description: "Wait for loading data")
+        
+        let cancellable = viewModelRepresentable.launchesListSubject.sink { completion in
+            debugPrint(completion)
         } receiveValue: { launches in
-            XCTAssert(launches.count == 1)
+            debugPrint("The count is \(launches.count)")
             expectation.fulfill()
         }
+        viewModelRepresentable.loadMoreLaunches()
+        
+        wait(for: [expectation], timeout: 1)
 
-        //then
-        wait(for: [expectation], timeout: 3)
+        
+        let searchingExpectation = XCTestExpectation(description: "Searching expectation")
+        
+        
+        let searchCancellable = viewModelRepresentable.launchesListSubject.sink { completion in
+            debugPrint(completion)
+        } receiveValue: { launches in
+            debugPrint(launches.first?.site)
+            XCTAssert(launches.first?.site == searchText)
+            searchingExpectation.fulfill()
+        }
+        viewModelRepresentable.search(text: searchText)
+        
+        wait(for: [searchingExpectation], timeout: 1)
+        
     }
 
     func testPerformanceExample() throws {
