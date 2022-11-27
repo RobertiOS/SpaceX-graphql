@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E10F4130293279650024671E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E10F4132293279650024671E /* Localizable.strings */; };
+		E10F415F29330A600024671E /* FruitsGraphQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F415E29330A600024671E /* FruitsGraphQLTests.swift */; };
 		E11150FA292FD1520041CB2B /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = E11150F9292FD1510041CB2B /* schema.graphqls */; };
 		E11151002930128A0041CB2B /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11150FF2930128A0041CB2B /* TypeAliases.swift */; };
 		E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8062292D2E0D0009B939 /* AppDelegate.swift */; };
@@ -31,8 +32,20 @@
 		E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2B0293265A000C25F83 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E10F416029330A600024671E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E14E8057292D2E0D0009B939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14E805E292D2E0D0009B939;
+			remoteInfo = FruitsGraphQL;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		E10F4131293279650024671E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E10F415C29330A600024671E /* FruitsGraphQLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitsGraphQLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10F415E29330A600024671E /* FruitsGraphQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGraphQLTests.swift; sourceTree = "<group>"; };
 		E11150F9292FD1510041CB2B /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		E11150FF2930128A0041CB2B /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E10F415929330A600024671E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14E805C292D2E0D0009B939 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +97,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		E10F415D29330A600024671E /* FruitsGraphQLTests */ = {
+			isa = PBXGroup;
+			children = (
+				E10F415E29330A600024671E /* FruitsGraphQLTests.swift */,
+			);
+			path = FruitsGraphQLTests;
+			sourceTree = "<group>";
+		};
 		E11150FE293012730041CB2B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E14E8061292D2E0D0009B939 /* FruitsGraphQL */,
+				E10F415D29330A600024671E /* FruitsGraphQLTests */,
 				E14E8060292D2E0D0009B939 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */,
+				E10F415C29330A600024671E /* FruitsGraphQLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +208,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E10F415B29330A600024671E /* FruitsGraphQLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E10F416429330A600024671E /* Build configuration list for PBXNativeTarget "FruitsGraphQLTests" */;
+			buildPhases = (
+				E10F415829330A600024671E /* Sources */,
+				E10F415929330A600024671E /* Frameworks */,
+				E10F415A29330A600024671E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E10F416129330A600024671E /* PBXTargetDependency */,
+			);
+			name = FruitsGraphQLTests;
+			productName = FruitsGraphQLTests;
+			productReference = E10F415C29330A600024671E /* FruitsGraphQLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E14E805E292D2E0D0009B939 /* FruitsGraphQL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14E8076292D2E140009B939 /* Build configuration list for PBXNativeTarget "FruitsGraphQL" */;
@@ -212,6 +260,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					E10F415B29330A600024671E = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = E14E805E292D2E0D0009B939;
+					};
 					E14E805E292D2E0D0009B939 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -235,11 +287,19 @@
 			projectRoot = "";
 			targets = (
 				E14E805E292D2E0D0009B939 /* FruitsGraphQL */,
+				E10F415B29330A600024671E /* FruitsGraphQLTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E10F415A29330A600024671E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14E805D292D2E0D0009B939 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +336,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E10F415829330A600024671E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E10F415F29330A600024671E /* FruitsGraphQLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14E805B292D2E0D0009B939 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +366,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E10F416129330A600024671E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14E805E292D2E0D0009B939 /* FruitsGraphQL */;
+			targetProxy = E10F416029330A600024671E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E10F4132293279650024671E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -318,6 +394,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E10F416229330A600024671E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HY5HVV22ZQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fruits.FruitsGraphQLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FruitsGraphQL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FruitsGraphQL";
+			};
+			name = Debug;
+		};
+		E10F416329330A600024671E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HY5HVV22ZQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fruits.FruitsGraphQLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FruitsGraphQL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FruitsGraphQL";
+			};
+			name = Release;
+		};
 		E14E8074292D2E140009B939 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,6 +611,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E10F416429330A600024671E /* Build configuration list for PBXNativeTarget "FruitsGraphQLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E10F416229330A600024671E /* Debug */,
+				E10F416329330A600024671E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E14E805A292D2E0D0009B939 /* Build configuration list for PBXProject "FruitsGraphQL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
