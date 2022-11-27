@@ -6,11 +6,14 @@
 //
 
 import XCTest
+import Combine
+
 @testable import FruitsGraphQL
 
 final class FruitsGraphQLTests: XCTestCase {
     
     var viewModelRepresentable: MainListViewModelRepresentable!
+    var cancellables = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -37,46 +40,40 @@ final class FruitsGraphQLTests: XCTestCase {
         viewModelRepresentable.loadMoreLaunches()
         //when
         let expectation = expectation(description: "Wait for load data subject")
-        let cancellable = viewModelRepresentable.launchesListSubject.sink { _ in
-            
+        viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
             XCTAssert(launches.isEmpty == false)
             expectation.fulfill()
-        }
+        }.store(in: &cancellables)
 
         //then
         wait(for: [expectation], timeout: 1)
     }
     
     func testSearchData() {
-        
         let searchText = "VAFB SLC 4E"
-        
         let expectation = XCTestExpectation(description: "Wait for loading data")
-        
-        let cancellable = viewModelRepresentable.launchesListSubject.sink { completion in
-            debugPrint(completion)
+
+        viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
             debugPrint("The count is \(launches.count)")
             expectation.fulfill()
-        }
+        }.store(in: &cancellables)
+
         viewModelRepresentable.loadMoreLaunches()
-        
+
         wait(for: [expectation], timeout: 1)
 
-        
         let searchingExpectation = XCTestExpectation(description: "Searching expectation")
         
-        
-        let searchCancellable = viewModelRepresentable.launchesListSubject.sink { completion in
-            debugPrint(completion)
+        viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
-            debugPrint(launches.first?.site)
             XCTAssert(launches.first?.site == searchText)
             searchingExpectation.fulfill()
-        }
+        }.store(in: &cancellables)
+
         viewModelRepresentable.search(text: searchText)
-        
+
         wait(for: [searchingExpectation], timeout: 1)
         
     }
