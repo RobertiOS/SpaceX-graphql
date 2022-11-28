@@ -36,17 +36,13 @@ final class FruitsGraphQLTests: XCTestCase {
     }
     
     func testLoadData() {
-        //given
-        viewModelRepresentable.loadMoreLaunches()
-        //when
         let expectation = expectation(description: "Wait for load data subject")
         viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
             XCTAssert(launches.isEmpty == false)
             expectation.fulfill()
         }.store(in: &cancellables)
-
-        //then
+        viewModelRepresentable.loadMoreLaunches()
         wait(for: [expectation], timeout: 1)
     }
     
@@ -56,7 +52,6 @@ final class FruitsGraphQLTests: XCTestCase {
 
         viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
-            debugPrint("The count is \(launches.count)")
             expectation.fulfill()
         }.store(in: &cancellables)
 
@@ -69,6 +64,35 @@ final class FruitsGraphQLTests: XCTestCase {
         viewModelRepresentable.launchesListSubject.sink { _ in
         } receiveValue: { launches in
             XCTAssert(launches.first?.site == searchText)
+            searchingExpectation.fulfill()
+        }.store(in: &cancellables)
+
+        viewModelRepresentable.search(text: searchText)
+
+        wait(for: [searchingExpectation], timeout: 1)
+        
+    }
+    
+    func testSearchDataWithEmptyText() {
+        let searchText = ""
+        var totalLaunches: Int = 0
+        let expectation = XCTestExpectation(description: "Wait for loading data")
+
+        viewModelRepresentable.launchesListSubject.sink { _ in
+        } receiveValue: { launches in
+            totalLaunches = launches.count
+            expectation.fulfill()
+        }.store(in: &cancellables)
+
+        viewModelRepresentable.loadMoreLaunches()
+
+        wait(for: [expectation], timeout: 1)
+
+        let searchingExpectation = XCTestExpectation(description: "Searching expectation")
+        
+        viewModelRepresentable.launchesListSubject.sink { _ in
+        } receiveValue: { launches in
+            XCTAssert(totalLaunches == launches.count)
             searchingExpectation.fulfill()
         }.store(in: &cancellables)
 
