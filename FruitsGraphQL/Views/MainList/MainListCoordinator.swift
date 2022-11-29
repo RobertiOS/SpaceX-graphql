@@ -24,4 +24,3 @@ extension MainListCoordinator: Coordinator {
         router.navigationController.pushViewController(primaryViewController, animated: true)
     }
 }
-

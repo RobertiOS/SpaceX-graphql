@@ -36,10 +36,10 @@ class MainListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.launchesListSubject.subscribe(self)
-        
+
         setUI()
     }
-    
+
     private func setUI() {
         title = "Launches"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reusableCell")
@@ -47,7 +47,7 @@ class MainListViewController: UITableViewController {
         setUpDataSource()
         setUpSearchController()
     }
-    
+
     private func setUpSearchController() {
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
@@ -55,7 +55,7 @@ class MainListViewController: UITableViewController {
     }
 
     func setUpDataSource() {
-        dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier -> UITableViewCell? in
+        dataSource = DataSource(tableView: tableView) { tableView, _, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")
             var contentConfiguration = cell?.defaultContentConfiguration()
             contentConfiguration?.text = itemIdentifier.site
@@ -63,9 +63,9 @@ class MainListViewController: UITableViewController {
             cell?.contentConfiguration = contentConfiguration
             return cell
         }
-        
+
     }
-    
+
     func applySnapshot(items: [Launch]) {
         var snapShot = Snapshot()
         snapShot.appendSections(Section.allCases)
@@ -90,7 +90,7 @@ extension MainListViewController: Subscriber {
     }
 
     func receive(completion: Subscribers.Completion<Failure>) {
-        let alert = UIAlertController(title: "Error", message: "\(completion)",preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "\(completion)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         present(alert, animated: true)
     }
@@ -121,4 +121,3 @@ extension LaunchListQuery.Data.Launch.Launch: Hashable {
     }
 
 }
-

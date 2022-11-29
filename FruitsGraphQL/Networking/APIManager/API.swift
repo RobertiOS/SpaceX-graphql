@@ -43,7 +43,7 @@ public final class LaunchListQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("launches", arguments: ["after": GraphQLVariable("after")], type: .nonNull(.object(Launch.selections))),
+        GraphQLField("launches", arguments: ["after": GraphQLVariable("after")], type: .nonNull(.object(Launch.selections)))
       ]
     }
 
@@ -74,7 +74,7 @@ public final class LaunchListQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
           GraphQLField("hasMore", type: .nonNull(.scalar(Bool.self))),
-          GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections)))),
+          GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections))))
         ]
       }
 
@@ -132,7 +132,7 @@ public final class LaunchListQuery: GraphQLQuery {
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
             GraphQLField("site", type: .scalar(String.self)),
-            GraphQLField("mission", type: .object(Mission.selections)),
+            GraphQLField("mission", type: .object(Mission.selections))
           ]
         }
 
@@ -188,7 +188,7 @@ public final class LaunchListQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("missionPatch", type: .scalar(String.self)),
+              GraphQLField("missionPatch", type: .scalar(String.self))
             ]
           }
 
