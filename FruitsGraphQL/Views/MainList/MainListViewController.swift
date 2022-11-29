@@ -58,8 +58,8 @@ class MainListViewController: UITableViewController {
         dataSource = DataSource(tableView: tableView) { tableView, _, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")
             var contentConfiguration = cell?.defaultContentConfiguration()
-            contentConfiguration?.text = itemIdentifier.site
-            contentConfiguration?.secondaryText = itemIdentifier.id
+            contentConfiguration?.text = itemIdentifier.fragments.launchDetails.site
+            contentConfiguration?.secondaryText = itemIdentifier.fragments.launchDetails.id
             cell?.contentConfiguration = contentConfiguration
             return cell
         }
@@ -74,7 +74,7 @@ class MainListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.presentDetailView()
+        viewModel.presentDetailView(index: indexPath.row)
     }
 
 }
@@ -117,11 +117,11 @@ extension MainListViewController: UITableViewDataSourcePrefetching {
 extension LaunchListQuery.Data.Launch.Launch: Hashable {
 
     public static func == (lhs: LaunchListQuery.Data.Launch.Launch, rhs: LaunchListQuery.Data.Launch.Launch) -> Bool {
-        lhs.id == rhs.id
+        lhs.fragments.launchDetails.id == rhs.fragments.launchDetails.id
     }
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(fragments.launchDetails.id)
     }
 
 }

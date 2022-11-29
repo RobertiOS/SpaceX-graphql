@@ -10,34 +10,33 @@ import Apollo
 import Combine
 
 protocol DetailViewModelRepresentable: AnyObject {
-    var launchSubject: PassthroughSubject<LaunchDetail, Error> { get set}
+    var launchSubject: PassthroughSubject<LaunchDetails, Error> { get set}
     func loadDetails()
 }
 
 final class DetailViewModel {
-    let apolloClient: ApolloClient
+    let apiManager: ApiManagerDetailRepresentable
     let launchId: GraphQLID
-    var launchSubject: PassthroughSubject<LaunchDetail, Error> = .init()
+    var launchSubject: PassthroughSubject<LaunchDetails, Error> = .init()
 
-//    init(apolloCLient: ApolloClient = APIManager.shared.apolloClient, launchID: GraphQLID) {
-//        self.launchId = launchID
-//        self.apolloClient = apolloCLient
-//        loadDetails()
-//    }
+    init(apiManager: ApiManagerDetailRepresentable = APIManager(), launchID: GraphQLID) {
+        self.launchId = launchID
+        self.apiManager = apiManager
+        loadDetails()
+    }
 }
 
 extension DetailViewModel: DetailViewModelRepresentable {
     func loadDetails() {
-        apolloClient.fetch(query: LaunchQuery(launchId: launchId)) { [unowned self]result in
-            switch result {
-            case .success(let graphqlResult):
-                if let launch = graphqlResult.data?.launch {
-                    launchSubject.send(launch)
-                }
-                //TODO: process graph ql errors
+        apiManager.loadDetails(launchId: launchId).sink { [unowned self] completion in
+            switch completion {
             case .failure(let error):
                 launchSubject.send(completion: .failure(error))
+            case .finished:
+                launchSubject.send(completion: .finished)
             }
+        } receiveValue: { [unowned self] launch in
+            launchSubject.send(launch)
         }
     }
 }

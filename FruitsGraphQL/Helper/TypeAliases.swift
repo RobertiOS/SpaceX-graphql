@@ -8,5 +8,3 @@
 import Foundation
 
 typealias Launch = LaunchListQuery.Data.Launch.Launch
-
-typealias LaunchDetail = LaunchQuery.Data.Launch

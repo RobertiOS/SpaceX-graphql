@@ -26,8 +26,8 @@ class DetailViewController: UIViewController {
             print(completion)
         } receiveValue: { launch in
             self.navigationItem.titleView = nil
-            self.title = launch.fragments.launchDetails.site
-            self.navigationItem.title = launch.fragments.launchDetails.site
+            self.title = launch.site
+            self.navigationItem.title = launch.site
         }
     }
     

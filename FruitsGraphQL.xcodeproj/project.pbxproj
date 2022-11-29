@@ -31,6 +31,8 @@
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
 		E17D4C12292F286D00F70601 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C11292F286D00F70601 /* APIManager.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
+		E19EBA8A2936C77B000AB013 /* APIManager+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EBA892936C77B000AB013 /* APIManager+List.swift */; };
+		E19EBA8C2936CEDD000AB013 /* APIManager+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EBA8B2936CEDD000AB013 /* APIManager+Detail.swift */; };
 		E1A7D2AD293265A000C25F83 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AC293265A000C25F83 /* Collections */; };
 		E1A7D2AF293265A000C25F83 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AE293265A000C25F83 /* DequeModule */; };
 		E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2B0293265A000C25F83 /* OrderedCollections */; };
@@ -73,6 +75,8 @@
 		E14E8097292D4C010009B939 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
 		E17D4C11292F286D00F70601 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E19EBA892936C77B000AB013 /* APIManager+List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+List.swift"; sourceTree = "<group>"; };
+		E19EBA8B2936CEDD000AB013 /* APIManager+Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Detail.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 			children = (
 				E17D4C11292F286D00F70601 /* APIManager.swift */,
 				E14E8095292D4BC10009B939 /* API.swift */,
+				E19EBA892936C77B000AB013 /* APIManager+List.swift */,
+				E19EBA8B2936CEDD000AB013 /* APIManager+Detail.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -391,10 +397,12 @@
 				E17D4C12292F286D00F70601 /* APIManager.swift in Sources */,
 				E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */,
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
+				E19EBA8C2936CEDD000AB013 /* APIManager+Detail.swift in Sources */,
 				E11151002930128A0041CB2B /* TypeAliases.swift in Sources */,
 				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
 				E14E8084292D35F80009B939 /* Router.swift in Sources */,
 				E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */,
+				E19EBA8A2936C77B000AB013 /* APIManager+List.swift in Sources */,
 				E14E8096292D4BC10009B939 /* API.swift in Sources */,
 				E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */,
 				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
