@@ -23,7 +23,7 @@ class MainListViewController: UITableViewController {
 
     var dataSource: DataSource?
 
-    init(viewModel: MainListViewModel) {
+    init(viewModel: MainListViewModelRepresentable) {
         self.viewModel = viewModel
         super.init(style: .plain)
     }
@@ -71,6 +71,10 @@ class MainListViewController: UITableViewController {
         snapShot.appendSections(Section.allCases)
         snapShot.appendItems(items)
         dataSource?.apply(snapShot, animatingDifferences: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.presentDetailView()
     }
 
 }

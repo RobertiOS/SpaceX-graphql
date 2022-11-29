@@ -14,10 +14,10 @@ protocol MainListViewModelRepresentable: AnyObject {
     var launchesListSubject: PassthroughSubject<[Launch], Error> { get set }
     func loadMoreLaunches()
     func search(text: String?)
+    func presentDetailView()
 }
 
-final class MainListViewModel: MainListViewModelRepresentable {
-
+final class MainListViewModel<R: AppRouter> {
     private let apolloCLient: ApolloClient
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
     private var lastConnection: LaunchListQuery.Data.Launch?
@@ -29,12 +29,17 @@ final class MainListViewModel: MainListViewModelRepresentable {
             launchesListSubject.send(Array(set))
         }
     }
+    
+    weak var router: R?
 
     init(apolloCLient: ApolloClient = APIManager.shared.apolloClient) {
         self.apolloCLient = apolloCLient
         loadMoreLaunches()
     }
 
+}
+
+extension MainListViewModel: MainListViewModelRepresentable {
     func loadMoreLaunches() {
         guard let lastConnection = lastConnection else {
             loadData(from: nil)
@@ -72,5 +77,8 @@ final class MainListViewModel: MainListViewModelRepresentable {
 
         launchesListSubject.send(launches)
     }
-
+    
+    func presentDetailView() {
+        router?.present(route: .detail)
+    }
 }

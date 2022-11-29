@@ -11,6 +11,10 @@
 		E10F415F29330A600024671E /* FruitsGraphQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F415E29330A600024671E /* FruitsGraphQLTests.swift */; };
 		E11150FA292FD1520041CB2B /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = E11150F9292FD1510041CB2B /* schema.graphqls */; };
 		E11151002930128A0041CB2B /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11150FF2930128A0041CB2B /* TypeAliases.swift */; };
+		E1123A5E2935BC2800FF19B5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1123A5C2935BC2800FF19B5 /* DetailViewController.swift */; };
+		E1123A5F2935BC2800FF19B5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1123A5D2935BC2800FF19B5 /* DetailViewController.xib */; };
+		E1123A612935BC3F00FF19B5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1123A602935BC3F00FF19B5 /* DetailViewModel.swift */; };
+		E1123A632935BC8A00FF19B5 /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1123A622935BC8A00FF19B5 /* DetailViewCoordinator.swift */; };
 		E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8062292D2E0D0009B939 /* AppDelegate.swift */; };
 		E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8064292D2E0D0009B939 /* SceneDelegate.swift */; };
 		E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8066292D2E0D0009B939 /* MainListViewController.swift */; };
@@ -48,6 +52,10 @@
 		E10F415E29330A600024671E /* FruitsGraphQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGraphQLTests.swift; sourceTree = "<group>"; };
 		E11150F9292FD1510041CB2B /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		E11150FF2930128A0041CB2B /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		E1123A5C2935BC2800FF19B5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E1123A5D2935BC2800FF19B5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		E1123A602935BC3F00FF19B5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		E1123A622935BC8A00FF19B5 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E8062292D2E0D0009B939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14E8064292D2E0D0009B939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +121,17 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		E1123A5B2935BBEE00FF19B5 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E1123A5C2935BC2800FF19B5 /* DetailViewController.swift */,
+				E1123A5D2935BC2800FF19B5 /* DetailViewController.xib */,
+				E1123A602935BC3F00FF19B5 /* DetailViewModel.swift */,
+				E1123A622935BC8A00FF19B5 /* DetailViewCoordinator.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		E14E8056292D2E0D0009B939 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +173,7 @@
 		E14E807F292D346D0009B939 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1123A5B2935BBEE00FF19B5 /* DetailView */,
 				E14E8080292D34790009B939 /* MainList */,
 			);
 			path = Views;
@@ -306,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10F4130293279650024671E /* Localizable.strings in Resources */,
+				E1123A5F2935BC2800FF19B5 /* DetailViewController.xib in Resources */,
 				E11150FA292FD1520041CB2B /* schema.graphqls in Resources */,
 				E14E8072292D2E140009B939 /* LaunchScreen.storyboard in Resources */,
 				E14E8098292D4C010009B939 /* LaunchList.graphql in Resources */,
@@ -379,7 +400,10 @@
 				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
 				E14E806D292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld in Sources */,
 				E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */,
+				E1123A632935BC8A00FF19B5 /* DetailViewCoordinator.swift in Sources */,
 				E14E8082292D34920009B939 /* MainListCoordinator.swift in Sources */,
+				E1123A612935BC3F00FF19B5 /* DetailViewModel.swift in Sources */,
+				E1123A5E2935BC2800FF19B5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

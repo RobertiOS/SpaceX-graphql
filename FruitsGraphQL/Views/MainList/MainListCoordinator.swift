@@ -10,7 +10,8 @@ import UIKit
 final class MainListCoordinator<R: AppRouter> {
     let router: R
     private var primaryViewController: UIViewController {
-        let viewModel = MainListViewModel()
+        let viewModel = MainListViewModel<R>()
+        viewModel.router = router
         return MainListViewController(viewModel: viewModel)
     }
 

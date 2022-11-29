@@ -9,11 +9,14 @@ import Foundation
 
 enum AppTransition {
     case mainList
+    case detail
 
     func coordinaorFor<R: AppRouter>(appRouter: R) -> Coordinator {
         switch self {
         case .mainList:
             return MainListCoordinator(router: appRouter)
+        case .detail:
+            return DetailViewCoordinator(router: appRouter)
         }
     }
 
@@ -21,6 +24,8 @@ enum AppTransition {
         switch self {
         case .mainList:
             return "Main list"
+        case .detail:
+            return "Detail view"
         }
     }
 }
