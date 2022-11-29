@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import Apollo
 
 enum AppTransition {
     case mainList
-    case detail
+    case detail(launchID: GraphQLID)
 
     func coordinaorFor<R: AppRouter>(appRouter: R) -> Coordinator {
         switch self {
         case .mainList:
             return MainListCoordinator(router: appRouter)
-        case .detail:
-            return DetailViewCoordinator(router: appRouter)
+        case .detail(let id):
+            return DetailViewCoordinator(router: appRouter, launchID: id)
         }
     }
 

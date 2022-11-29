@@ -6,16 +6,35 @@
 //
 
 import UIKit
+import Combine
 
 class DetailViewController: UIViewController {
-
+    let viewModel: DetailViewModelRepresentable
+    var cancellable: AnyCancellable?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let activity = UIActivityIndicatorView()
+        activity.startAnimating()
+        navigationItem.titleView = activity
     }
-
-
+    
+    init(viewModel: DetailViewModelRepresentable) {
+        self.viewModel = viewModel
+        super.init(nibName: "DetailViewController", bundle: nil)
+        cancellable = viewModel.launchSubject.sink { completion in
+            print(completion)
+        } receiveValue: { launch in
+            self.navigationItem.titleView = nil
+            self.title = launch.fragments.launchDetails.site
+            self.navigationItem.title = launch.fragments.launchDetails.site
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     /*
     // MARK: - Navigation
 
