@@ -189,8 +189,8 @@
 		E14E8090292D4A5E0009B939 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				E14E8095292D4BC10009B939 /* API.swift */,
 				E17D4C11292F286D00F70601 /* APIManager.swift */,
+				E14E8095292D4BC10009B939 /* API.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";

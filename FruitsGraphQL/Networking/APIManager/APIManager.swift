@@ -10,5 +10,6 @@ import Apollo
 
 final class APIManager {
     static let shared = APIManager()
+    // swiftlint:disable:next force_unwrapping
     let apolloClient = ApolloClient(url: URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql/graphql")!)
 }

@@ -56,11 +56,11 @@ class MainListViewController: UITableViewController {
 
     func setUpDataSource() {
         dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")!
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = itemIdentifier.site
-            contentConfiguration.secondaryText = itemIdentifier.id
-            cell.contentConfiguration = contentConfiguration
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")
+            var contentConfiguration = cell?.defaultContentConfiguration()
+            contentConfiguration?.text = itemIdentifier.site
+            contentConfiguration?.secondaryText = itemIdentifier.id
+            cell?.contentConfiguration = contentConfiguration
             return cell
         }
         
