@@ -189,8 +189,8 @@
 		E14E8090292D4A5E0009B939 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				E14E8095292D4BC10009B939 /* API.swift */,
 				E17D4C11292F286D00F70601 /* APIManager.swift */,
+				E14E8095292D4BC10009B939 /* API.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -234,6 +234,7 @@
 				E14E805B292D2E0D0009B939 /* Sources */,
 				E14E805C292D2E0D0009B939 /* Frameworks */,
 				E14E805D292D2E0D0009B939 /* Resources */,
+				E1123A5A293546E800FF19B5 /* Swift lint */,
 			);
 			buildRules = (
 			);
@@ -315,6 +316,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E1123A5A293546E800FF19B5 /* Swift lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		E17D4C0D292F1E9300F70601 /* graph ql */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

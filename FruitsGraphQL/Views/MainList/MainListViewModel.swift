@@ -17,7 +17,7 @@ protocol MainListViewModelRepresentable: AnyObject {
 }
 
 final class MainListViewModel: MainListViewModelRepresentable {
-   
+
     private let apolloCLient: ApolloClient
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
     private var lastConnection: LaunchListQuery.Data.Launch?
@@ -29,22 +29,22 @@ final class MainListViewModel: MainListViewModelRepresentable {
             launchesListSubject.send(Array(set))
         }
     }
-    
+
     init(apolloCLient: ApolloClient = APIManager.shared.apolloClient) {
         self.apolloCLient = apolloCLient
         loadMoreLaunches()
     }
-    
+
     func loadMoreLaunches() {
         guard let lastConnection = lastConnection else {
             loadData(from: nil)
             return
         }
-        
+
         guard lastConnection.hasMore else { return }
         loadData(from: lastConnection.cursor)
     }
-    
+
     func loadData(from cursor: String?) {
         apolloCLient.fetch(query: LaunchListQuery(after: cursor)) { [weak self] result in
             self?.activeRequest = nil
@@ -58,19 +58,19 @@ final class MainListViewModel: MainListViewModelRepresentable {
             }
         }
     }
-    
+
     func search(text: String?) {
         guard let text = text,
         !text.isEmpty else {
             launchesListSubject.send(launches)
             return
         }
-        
+
         let launches = launches.filter { launch in
             launch.site?.localizedCaseInsensitiveContains(text) ?? false
         }
-        
+
         launchesListSubject.send(launches)
     }
-    
+
 }

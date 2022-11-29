@@ -16,5 +16,3 @@ protocol Router: AnyObject {
 
 protocol AppRouter: Router where Route == AppTransition {
 }
-
-

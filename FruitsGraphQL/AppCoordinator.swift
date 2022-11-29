@@ -9,7 +9,7 @@ import UIKit
 
 final class AppCoordinator {
     var navigationController = UINavigationController()
-    
+
 }
 
 extension AppCoordinator: Coordinator {
@@ -29,5 +29,5 @@ extension AppCoordinator: AppRouter {
         navigationController.popToRootViewController(animated: true)
         present(route: .mainList)
     }
-    
+
 }
