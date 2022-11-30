@@ -18,6 +18,7 @@ final class DetailViewModel {
     let apiManager: ApiManagerDetailRepresentable
     let launchId: ID
     var launchSubject: PassthroughSubject<LaunchDetails, Error> = .init()
+    var cancellable: AnyCancellable?
 
     init(apiManager: ApiManagerDetailRepresentable = APIManager(), launchID: ID) {
         self.launchId = launchID
@@ -28,7 +29,7 @@ final class DetailViewModel {
 
 extension DetailViewModel: DetailViewModelRepresentable {
     func loadDetails() {
-        apiManager.loadDetails(launchId: launchId).sink { [unowned self] completion in
+        cancellable = apiManager.loadDetails(launchId: launchId).sink { [unowned self] completion in
             switch completion {
             case .failure(let error):
                 launchSubject.send(completion: .failure(error))

@@ -38,6 +38,7 @@
 		E15799552937B262002E676D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799532937B262002E676D /* DetailViewController.swift */; };
 		E15799582937B298002E676D /* APIManager+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799562937B298002E676D /* APIManager+Detail.swift */; };
 		E15799592937B298002E676D /* APIManager+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799572937B298002E676D /* APIManager+List.swift */; };
+		E157995C2937CA12002E676D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E157995B2937CA11002E676D /* DetailViewController.xib */; };
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
 		E17D4C12292F286D00F70601 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C11292F286D00F70601 /* APIManager.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
@@ -68,7 +69,6 @@
 		E10F415E29330A600024671E /* FruitsGraphQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGraphQLTests.swift; sourceTree = "<group>"; };
 		E11150F9292FD1510041CB2B /* launchesSchema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = launchesSchema.graphqls; sourceTree = "<group>"; };
 		E11150FF2930128A0041CB2B /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
-		E1123A5D2935BC2800FF19B5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E1123A622935BC8A00FF19B5 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitsGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E8062292D2E0D0009B939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +98,7 @@
 		E15799532937B262002E676D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E15799562937B298002E676D /* APIManager+Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+Detail.swift"; sourceTree = "<group>"; };
 		E15799572937B298002E676D /* APIManager+List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+List.swift"; sourceTree = "<group>"; };
+		E157995B2937CA11002E676D /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
 		E17D4C11292F286D00F70601 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,9 +152,9 @@
 		E1123A5B2935BBEE00FF19B5 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				E157995B2937CA11002E676D /* DetailViewController.xib */,
 				E15799532937B262002E676D /* DetailViewController.swift */,
 				E15799522937B262002E676D /* DetailViewModel.swift */,
-				E1123A5D2935BC2800FF19B5 /* DetailViewController.xib */,
 				E1123A622935BC8A00FF19B5 /* DetailViewCoordinator.swift */,
 			);
 			path = DetailView;
@@ -419,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10F4130293279650024671E /* Localizable.strings in Resources */,
+				E157995C2937CA12002E676D /* DetailViewController.xib in Resources */,
 				E11150FA292FD1520041CB2B /* launchesSchema.graphqls in Resources */,
 				E14E8072292D2E140009B939 /* LaunchScreen.storyboard in Resources */,
 				E14E8098292D4C010009B939 /* LaunchList.graphql in Resources */,
