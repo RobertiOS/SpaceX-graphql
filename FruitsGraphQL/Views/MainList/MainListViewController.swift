@@ -22,7 +22,7 @@ class MainListViewController: UITableViewController {
 
     var dataSource: DataSource?
 
-    init(viewModel: MainListViewModel) {
+    init(viewModel: MainListViewModelRepresentable) {
         self.viewModel = viewModel
         super.init(style: .plain)
     }
@@ -57,8 +57,8 @@ class MainListViewController: UITableViewController {
         dataSource = DataSource(tableView: tableView) { tableView, _, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")
             var contentConfiguration = cell?.defaultContentConfiguration()
-            contentConfiguration?.text = itemIdentifier.site
-            contentConfiguration?.secondaryText = itemIdentifier.id
+            contentConfiguration?.text = itemIdentifier.fragments.launchDetails.site
+            contentConfiguration?.secondaryText = itemIdentifier.fragments.launchDetails.id
             cell?.contentConfiguration = contentConfiguration
             return cell
         }
@@ -70,6 +70,10 @@ class MainListViewController: UITableViewController {
         snapShot.appendSections(Section.allCases)
         snapShot.appendItems(items)
         dataSource?.apply(snapShot, animatingDifferences: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.presentDetailView(index: indexPath.row)
     }
 
 }
@@ -116,7 +120,7 @@ extension Launch: Hashable {
     }
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(fragments.launchDetails.id)
     }
 
 }

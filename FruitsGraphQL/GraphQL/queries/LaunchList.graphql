@@ -3,11 +3,25 @@ query LaunchList($after: String) {
     cursor
     hasMore
     launches {
-      id
-      site
-      mission {
-        missionPatch
-      }
+      ...LaunchDetails
     }
+  }
+}
+
+fragment LaunchDetails on Launch {
+  id
+  site
+  mission {
+    missionPatch
+    name
+  }
+  rocket {
+    name
+  }
+}
+
+query Launch($launchId: ID!) {
+  launch(id: $launchId) {
+    ...LaunchDetails
   }
 }
