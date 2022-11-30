@@ -30,14 +30,13 @@
 		E1A7D2AD293265A000C25F83 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AC293265A000C25F83 /* Collections */; };
 		E1A7D2AF293265A000C25F83 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2AE293265A000C25F83 /* DequeModule */; };
 		E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = E1A7D2B0293265A000C25F83 /* OrderedCollections */; };
-		E1D1D66D29371B1900F36D25 /* LaunchListQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66329371B1900F36D25 /* LaunchListQuery.graphql.swift */; };
-		E1D1D66E29371B1900F36D25 /* Launch.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66629371B1900F36D25 /* Launch.graphql.swift */; };
-		E1D1D66F29371B1900F36D25 /* Mission.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66729371B1900F36D25 /* Mission.graphql.swift */; };
-		E1D1D67029371B1A00F36D25 /* Query.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66829371B1900F36D25 /* Query.graphql.swift */; };
-		E1D1D67129371B1A00F36D25 /* LaunchConnection.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66929371B1900F36D25 /* LaunchConnection.graphql.swift */; };
-		E1D1D67229371B1A00F36D25 /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66A29371B1900F36D25 /* SchemaConfiguration.swift */; };
-		E1D1D67329371B1A00F36D25 /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66B29371B1900F36D25 /* SchemaMetadata.graphql.swift */; };
-		E1D1D67429371B1A00F36D25 /* FruitsGraphQL.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D66C29371B1900F36D25 /* FruitsGraphQL.graphql.swift */; };
+		E1D1D6812937A9D100F36D25 /* LaunchListQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D6782937A9D100F36D25 /* LaunchListQuery.graphql.swift */; };
+		E1D1D6822937A9D100F36D25 /* Launch.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D67B2937A9D100F36D25 /* Launch.graphql.swift */; };
+		E1D1D6832937A9D100F36D25 /* Mission.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D67C2937A9D100F36D25 /* Mission.graphql.swift */; };
+		E1D1D6842937A9D100F36D25 /* Query.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D67D2937A9D100F36D25 /* Query.graphql.swift */; };
+		E1D1D6852937A9D100F36D25 /* LaunchConnection.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D67E2937A9D100F36D25 /* LaunchConnection.graphql.swift */; };
+		E1D1D6862937A9D100F36D25 /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D67F2937A9D100F36D25 /* SchemaConfiguration.swift */; };
+		E1D1D6872937A9D100F36D25 /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1D6802937A9D100F36D25 /* SchemaMetadata.graphql.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,14 +72,13 @@
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
 		E17D4C11292F286D00F70601 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E19EBA9829371244000AB013 /* apollo-codegen-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apollo-codegen-config.json"; sourceTree = "<group>"; };
-		E1D1D66329371B1900F36D25 /* LaunchListQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListQuery.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66629371B1900F36D25 /* Launch.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66729371B1900F36D25 /* Mission.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66829371B1900F36D25 /* Query.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66929371B1900F36D25 /* LaunchConnection.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchConnection.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66A29371B1900F36D25 /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
-		E1D1D66B29371B1900F36D25 /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
-		E1D1D66C29371B1900F36D25 /* FruitsGraphQL.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitsGraphQL.graphql.swift; sourceTree = "<group>"; };
+		E1D1D6782937A9D100F36D25 /* LaunchListQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListQuery.graphql.swift; sourceTree = "<group>"; };
+		E1D1D67B2937A9D100F36D25 /* Launch.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.graphql.swift; sourceTree = "<group>"; };
+		E1D1D67C2937A9D100F36D25 /* Mission.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.graphql.swift; sourceTree = "<group>"; };
+		E1D1D67D2937A9D100F36D25 /* Query.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.graphql.swift; sourceTree = "<group>"; };
+		E1D1D67E2937A9D100F36D25 /* LaunchConnection.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchConnection.graphql.swift; sourceTree = "<group>"; };
+		E1D1D67F2937A9D100F36D25 /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
+		E1D1D6802937A9D100F36D25 /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +220,7 @@
 		E19EBA9729371244000AB013 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D65F29371B1900F36D25 /* generated */,
+				E1D1D6752937A9D100F36D25 /* generated */,
 				E11150F9292FD1510041CB2B /* launchesSchema.graphqls */,
 				E19EBA9829371244000AB013 /* apollo-codegen-config.json */,
 				E14E808F292D4A550009B939 /* queries */,
@@ -230,57 +228,48 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
-		E1D1D65F29371B1900F36D25 /* generated */ = {
+		E1D1D6752937A9D100F36D25 /* generated */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D66029371B1900F36D25 /* schema */,
+				E1D1D6762937A9D100F36D25 /* Operations */,
+				E1D1D6792937A9D100F36D25 /* Schema */,
 			);
 			path = generated;
 			sourceTree = "<group>";
 		};
-		E1D1D66029371B1900F36D25 /* schema */ = {
+		E1D1D6762937A9D100F36D25 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D66129371B1900F36D25 /* Operations */,
-				E1D1D66429371B1900F36D25 /* Schema */,
-				E1D1D66C29371B1900F36D25 /* FruitsGraphQL.graphql.swift */,
-			);
-			path = schema;
-			sourceTree = "<group>";
-		};
-		E1D1D66129371B1900F36D25 /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				E1D1D66229371B1900F36D25 /* Queries */,
+				E1D1D6772937A9D100F36D25 /* Queries */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
 		};
-		E1D1D66229371B1900F36D25 /* Queries */ = {
+		E1D1D6772937A9D100F36D25 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D66329371B1900F36D25 /* LaunchListQuery.graphql.swift */,
+				E1D1D6782937A9D100F36D25 /* LaunchListQuery.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
 		};
-		E1D1D66429371B1900F36D25 /* Schema */ = {
+		E1D1D6792937A9D100F36D25 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D66529371B1900F36D25 /* Objects */,
-				E1D1D66A29371B1900F36D25 /* SchemaConfiguration.swift */,
-				E1D1D66B29371B1900F36D25 /* SchemaMetadata.graphql.swift */,
+				E1D1D67A2937A9D100F36D25 /* Objects */,
+				E1D1D67F2937A9D100F36D25 /* SchemaConfiguration.swift */,
+				E1D1D6802937A9D100F36D25 /* SchemaMetadata.graphql.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
 		};
-		E1D1D66529371B1900F36D25 /* Objects */ = {
+		E1D1D67A2937A9D100F36D25 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				E1D1D66629371B1900F36D25 /* Launch.graphql.swift */,
-				E1D1D66729371B1900F36D25 /* Mission.graphql.swift */,
-				E1D1D66829371B1900F36D25 /* Query.graphql.swift */,
-				E1D1D66929371B1900F36D25 /* LaunchConnection.graphql.swift */,
+				E1D1D67B2937A9D100F36D25 /* Launch.graphql.swift */,
+				E1D1D67C2937A9D100F36D25 /* Mission.graphql.swift */,
+				E1D1D67D2937A9D100F36D25 /* Query.graphql.swift */,
+				E1D1D67E2937A9D100F36D25 /* LaunchConnection.graphql.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -430,25 +419,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17D4C12292F286D00F70601 /* APIManager.swift in Sources */,
-				E1D1D67329371B1A00F36D25 /* SchemaMetadata.graphql.swift in Sources */,
-				E1D1D67029371B1A00F36D25 /* Query.graphql.swift in Sources */,
+				E1D1D6872937A9D100F36D25 /* SchemaMetadata.graphql.swift in Sources */,
+				E1D1D6842937A9D100F36D25 /* Query.graphql.swift in Sources */,
 				E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */,
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
 				E11151002930128A0041CB2B /* TypeAliases.swift in Sources */,
-				E1D1D66F29371B1900F36D25 /* Mission.graphql.swift in Sources */,
-				E1D1D67429371B1A00F36D25 /* FruitsGraphQL.graphql.swift in Sources */,
+				E1D1D6832937A9D100F36D25 /* Mission.graphql.swift in Sources */,
 				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
 				E14E8084292D35F80009B939 /* Router.swift in Sources */,
-				E1D1D67129371B1A00F36D25 /* LaunchConnection.graphql.swift in Sources */,
+				E1D1D6852937A9D100F36D25 /* LaunchConnection.graphql.swift in Sources */,
 				E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */,
 				E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */,
-				E1D1D66D29371B1900F36D25 /* LaunchListQuery.graphql.swift in Sources */,
+				E1D1D6812937A9D100F36D25 /* LaunchListQuery.graphql.swift in Sources */,
 				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
 				E14E806D292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld in Sources */,
-				E1D1D66E29371B1900F36D25 /* Launch.graphql.swift in Sources */,
+				E1D1D6822937A9D100F36D25 /* Launch.graphql.swift in Sources */,
 				E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */,
 				E14E8082292D34920009B939 /* MainListCoordinator.swift in Sources */,
-				E1D1D67229371B1A00F36D25 /* SchemaConfiguration.swift in Sources */,
+				E1D1D6862937A9D100F36D25 /* SchemaConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 
 import ApolloAPI
 
-public extension FruitsGraphQL.Objects {
+public extension Objects {
   /// Simple wrapper around our list of launches that contains a cursor to the
   /// last item in the list. Pass this cursor to the launches query to fetch results
   /// after these.

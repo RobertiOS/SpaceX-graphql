@@ -3,9 +3,9 @@
 
 import ApolloAPI
 
-public extension FruitsGraphQL.Objects {
-  static let Mission = Object(
-    typename: "Mission",
+public extension Objects {
+  static let Query = Object(
+    typename: "Query",
     implementedInterfaces: []
   )
 }
