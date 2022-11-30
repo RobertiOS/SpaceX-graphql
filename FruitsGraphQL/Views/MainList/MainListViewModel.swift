@@ -20,7 +20,7 @@ final class MainListViewModel: MainListViewModelRepresentable {
 
     private let apolloCLient: ApolloClient
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
-    private var lastConnection: LaunchListQuery.Data.Launch?
+    private var lastConnection: FruitsGraphQL.LaunchListQuery.Data.Launches?
     private var activeRequest: Apollo.Cancellable?
     private var launches = [Launch]() {
         didSet {
@@ -42,11 +42,11 @@ final class MainListViewModel: MainListViewModelRepresentable {
         }
 
         guard lastConnection.hasMore else { return }
-        loadData(from: lastConnection.cursor)
+        loadData(from: .some(lastConnection.cursor))
     }
 
-    func loadData(from cursor: String?) {
-        apolloCLient.fetch(query: LaunchListQuery(after: cursor)) { [weak self] result in
+    func loadData(from cursor: GraphQLNullable<String>) {
+        apolloCLient.fetch(query: FruitsGraphQL.LaunchListQuery(after: cursor)) { [weak self] result in
             self?.activeRequest = nil
             switch result {
             case .success(let data):
