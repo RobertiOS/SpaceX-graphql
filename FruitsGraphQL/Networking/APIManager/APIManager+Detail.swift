@@ -23,7 +23,7 @@ extension APIManager: ApiManagerDetailRepresentable {
                     if let launch = graphqlResult.data?.launch?.fragments.launchDetails {
                         promise(.success(launch))
                     }
-                    //TODO: process graph ql errors
+                    // TODO: process graph ql errors
                 case .failure(let error):
                     promise(.failure(error))
                 }
