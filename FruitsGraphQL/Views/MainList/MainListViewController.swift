@@ -9,7 +9,6 @@ import UIKit
 import Combine
 
 class MainListViewController: UITableViewController {
-    typealias Launch = LaunchListQuery.Data.Launch.Launch
     let viewModel: MainListViewModelRepresentable
 
     enum Section: CaseIterable {
@@ -114,10 +113,10 @@ extension MainListViewController: UITableViewDataSourcePrefetching {
     }
 }
 
-extension LaunchListQuery.Data.Launch.Launch: Hashable {
+extension Launch: Hashable {
 
-    public static func == (lhs: LaunchListQuery.Data.Launch.Launch, rhs: LaunchListQuery.Data.Launch.Launch) -> Bool {
-        lhs.fragments.launchDetails.id == rhs.fragments.launchDetails.id
+    public static func == (lhs: Launch, rhs: Launch) -> Bool {
+        lhs.id == rhs.id
     }
 
     public func hash(into hasher: inout Hasher) {

@@ -20,8 +20,8 @@ protocol MainListViewModelRepresentable: AnyObject {
 final class MainListViewModel<R: AppRouter> {
     private let apiManager: ApiManagerListRepresentable
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
-    private var lastConnection: LaunchListQuery.Data.Launch?
-    private var subscriptions = Set<AnyCancellable>()
+    private var lastConnection: LaunchListQuery.Data.Launches?
+    private var activeRequest: Apollo.Cancellable?
     private var launches = [Launch]() {
         didSet {
             var set = OrderedSet<Launch>()
@@ -47,7 +47,7 @@ extension MainListViewModel: MainListViewModelRepresentable {
         }
 
         guard lastConnection.hasMore else { return }
-        loadData(from: lastConnection.cursor)
+        loadData(from: .some(lastConnection.cursor))
     }
 
     func loadData(from cursor: String?) {
