@@ -15,16 +15,12 @@ public class LaunchListQuery: GraphQLQuery {
           hasMore
           launches {
             __typename
-            id
-            site
-            mission {
-              __typename
-              missionPatch
-            }
+            ...LaunchDetails
           }
         }
       }
-      """
+      """,
+      fragments: [LaunchDetails.self]
     ))
 
   public var after: GraphQLNullable<String>
@@ -73,28 +69,19 @@ public class LaunchListQuery: GraphQLQuery {
 
         public static var __parentType: ParentType { FruitsGraphQL.Objects.Launch }
         public static var __selections: [Selection] { [
-          .field("id", ID.self),
-          .field("site", String?.self),
-          .field("mission", Mission?.self),
+          .fragment(LaunchDetails.self),
         ] }
 
         public var id: ID { __data["id"] }
         public var site: String? { __data["site"] }
-        public var mission: Mission? { __data["mission"] }
+        public var mission: LaunchDetails.Mission? { __data["mission"] }
+        public var rocket: LaunchDetails.Rocket? { __data["rocket"] }
 
-        /// Launches.Launch.Mission
-        ///
-        /// Parent Type: `Mission`
-        public struct Mission: FruitsGraphQL.SelectionSet {
+        public struct Fragments: FragmentContainer {
           public let __data: DataDict
           public init(data: DataDict) { __data = data }
 
-          public static var __parentType: ParentType { FruitsGraphQL.Objects.Mission }
-          public static var __selections: [Selection] { [
-            .field("missionPatch", String?.self),
-          ] }
-
-          public var missionPatch: String? { __data["missionPatch"] }
+          public var launchDetails: LaunchDetails { _toFragment() }
         }
       }
     }

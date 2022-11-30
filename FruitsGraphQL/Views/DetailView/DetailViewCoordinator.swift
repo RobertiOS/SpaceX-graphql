@@ -14,13 +14,13 @@ final class DetailViewCoordinator<R: AppRouter>: Coordinator {
         return DetailViewController(viewModel: viewModel)
     }
     
-    init(router: R, launchID: GraphQLID) {
+    init(router: R, launchID: ID) {
         self.router = router
         self.launchID = launchID
     }
     
     let router: R
-    let launchID: GraphQLID
+    let launchID: ID
     func start() {
         router.navigationController.pushViewController(viewController, animated: true)
     }

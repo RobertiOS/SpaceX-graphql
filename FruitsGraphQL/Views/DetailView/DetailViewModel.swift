@@ -16,10 +16,10 @@ protocol DetailViewModelRepresentable: AnyObject {
 
 final class DetailViewModel {
     let apiManager: ApiManagerDetailRepresentable
-    let launchId: GraphQLID
+    let launchId: ID
     var launchSubject: PassthroughSubject<LaunchDetails, Error> = .init()
 
-    init(apiManager: ApiManagerDetailRepresentable = APIManager(), launchID: GraphQLID) {
+    init(apiManager: ApiManagerDetailRepresentable = APIManager(), launchID: ID) {
         self.launchId = launchID
         self.apiManager = apiManager
         loadDetails()

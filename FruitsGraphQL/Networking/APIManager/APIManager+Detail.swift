@@ -10,11 +10,11 @@ import Combine
 import Apollo
 
 protocol ApiManagerDetailRepresentable: AnyObject {
-    func loadDetails(launchId: GraphQLID) -> Future<LaunchDetails, Error>
+    func loadDetails(launchId: ID) -> Future<LaunchDetails, Error>
 }
 
 extension APIManager: ApiManagerDetailRepresentable {
-    func loadDetails(launchId: GraphQLID) -> Future<LaunchDetails, Error> {
+    func loadDetails(launchId: ID) -> Future<LaunchDetails, Error> {
         return Future { [weak self] promise in
             self?.activeRequest = self?.apolloClient.fetch(query: LaunchQuery(launchId: launchId)) { result in
                 self?.activeRequest = nil

@@ -21,7 +21,7 @@ final class MainListViewModel<R: AppRouter> {
     private let apiManager: ApiManagerListRepresentable
     var launchesListSubject = PassthroughSubject<[Launch], Error>()
     private var lastConnection: LaunchListQuery.Data.Launches?
-    private var activeRequest: Apollo.Cancellable?
+    private var subscriptions = Set<AnyCancellable>()
     private var launches = [Launch]() {
         didSet {
             var set = OrderedSet<Launch>()
@@ -50,7 +50,7 @@ extension MainListViewModel: MainListViewModelRepresentable {
         loadData(from: .some(lastConnection.cursor))
     }
 
-    func loadData(from cursor: String?) {
+    func loadData(from cursor: GraphQLNullable<String>) {
         apiManager.loadData(cursor: cursor).sink { [weak self] completion in
             switch completion {
             case .failure(let error):

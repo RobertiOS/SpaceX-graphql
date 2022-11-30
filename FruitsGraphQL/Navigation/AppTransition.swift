@@ -10,7 +10,7 @@ import Apollo
 
 enum AppTransition {
     case mainList
-    case detail(launchID: GraphQLID)
+    case detail(launchID: ID)
 
     func coordinaorFor<R: AppRouter>(appRouter: R) -> Coordinator {
         switch self {

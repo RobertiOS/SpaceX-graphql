@@ -7,13 +7,14 @@
 
 import Foundation
 import Combine
+import Apollo
 
 protocol ApiManagerListRepresentable: AnyObject {
-    func loadData(cursor: String?) -> Future<LaunchListQuery.Data.Launch, Error>
+    func loadData(cursor: GraphQLNullable<String>) -> Future<LaunchListQuery.Data.Launches, Error>
 }
 
 extension APIManager: ApiManagerListRepresentable {
-    func loadData(cursor: String?) -> Future<LaunchListQuery.Data.Launch, Error> {
+    func loadData(cursor: GraphQLNullable<String>) -> Future<LaunchListQuery.Data.Launches, Error> {
         return Future { [weak self] promise in
             self?.activeRequest = self?.apolloClient.fetch(query: LaunchListQuery(after: cursor)) { result in
                 self?.activeRequest = nil

@@ -26,6 +26,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "LaunchConnection": return FruitsGraphQL.Objects.LaunchConnection
     case "Launch": return FruitsGraphQL.Objects.Launch
     case "Mission": return FruitsGraphQL.Objects.Mission
+    case "Rocket": return FruitsGraphQL.Objects.Rocket
     default: return nil
     }
   }
