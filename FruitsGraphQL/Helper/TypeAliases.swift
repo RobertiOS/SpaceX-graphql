@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias Launch = LaunchListQuery.Data.Launch.Launch
+typealias Launch = FruitsGraphQL.LaunchListQuery.Data.Launches.Launch
