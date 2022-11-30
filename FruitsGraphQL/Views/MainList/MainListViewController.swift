@@ -9,7 +9,6 @@ import UIKit
 import Combine
 
 class MainListViewController: UITableViewController {
-    typealias Launch = FruitsGraphQL.LaunchListQuery.Data.Launches.Launch
     let viewModel: MainListViewModelRepresentable
 
     enum Section: CaseIterable {
@@ -110,9 +109,9 @@ extension MainListViewController: UITableViewDataSourcePrefetching {
     }
 }
 
-extension FruitsGraphQL.LaunchListQuery.Data.Launches.Launch: Hashable {
+extension Launch: Hashable {
 
-    public static func == (lhs: FruitsGraphQL.LaunchListQuery.Data.Launches.Launch, rhs: FruitsGraphQL.LaunchListQuery.Data.Launches.Launch) -> Bool {
+    public static func == (lhs: Launch, rhs: Launch) -> Bool {
         lhs.id == rhs.id
     }
 

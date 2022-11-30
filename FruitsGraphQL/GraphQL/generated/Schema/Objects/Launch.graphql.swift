@@ -3,7 +3,7 @@
 
 import ApolloAPI
 
-public extension FruitsGraphQL.Objects {
+public extension Objects {
   static let Launch = Object(
     typename: "Launch",
     implementedInterfaces: []
