@@ -2,7 +2,6 @@
 // This file was automatically generated and should not be edited.
 
 import ApolloTestSupport
-import FruitsGraphQL
 
 public class Query: MockObject {
   public static let objectType: Object = FruitsGraphQL.Objects.Query

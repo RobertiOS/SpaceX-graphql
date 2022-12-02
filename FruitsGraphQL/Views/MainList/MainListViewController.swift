@@ -113,9 +113,9 @@ extension MainListViewController: UITableViewDataSourcePrefetching {
     }
 }
 
-extension Launch: Hashable {
+extension LaunchDetails: Hashable {
 
-    public static func == (lhs: Launch, rhs: Launch) -> Bool {
+    public static func == (lhs: LaunchDetails, rhs: LaunchDetails) -> Bool {
         lhs.id == rhs.id
     }
 

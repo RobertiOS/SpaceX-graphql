@@ -2,10 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 import ApolloTestSupport
-import FruitsGraphQL
 
 public class Rocket: MockObject {
-  public static let objectType: Object = FruitsGraphQL.Objects.Rocket
+  public static let objectType: Object = Objects.Rocket
   public static let _mockFields = MockFields()
   public typealias MockValueCollectionType = Array<Mock<Rocket>>
 

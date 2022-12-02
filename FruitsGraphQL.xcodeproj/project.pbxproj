@@ -46,6 +46,8 @@
 		E157996A2937FC0B002E676D /* LaunchConnection+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799652937FC0B002E676D /* LaunchConnection+Mock.graphql.swift */; };
 		E157996B2937FC0B002E676D /* Mission+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799662937FC0B002E676D /* Mission+Mock.graphql.swift */; };
 		E157996C2937FC0B002E676D /* Rocket+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799672937FC0B002E676D /* Rocket+Mock.graphql.swift */; };
+		E157996E293855CD002E676D /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157996D293855CD002E676D /* MockNetworkTransport.swift */; };
+		E157997029385604002E676D /* MockGraphQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157996F29385604002E676D /* MockGraphQuery.swift */; };
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
 		E17D4C12292F286D00F70601 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C11292F286D00F70601 /* APIManager.swift */; };
 		E19C5804292D6B36004C7205 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = E19C5803292D6B36004C7205 /* Apollo */; };
@@ -113,6 +115,8 @@
 		E15799652937FC0B002E676D /* LaunchConnection+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchConnection+Mock.graphql.swift"; sourceTree = "<group>"; };
 		E15799662937FC0B002E676D /* Mission+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mission+Mock.graphql.swift"; sourceTree = "<group>"; };
 		E15799672937FC0B002E676D /* Rocket+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rocket+Mock.graphql.swift"; sourceTree = "<group>"; };
+		E157996D293855CD002E676D /* MockNetworkTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
+		E157996F29385604002E676D /* MockGraphQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGraphQuery.swift; sourceTree = "<group>"; };
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
 		E17D4C11292F286D00F70601 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				E157995E2937F9BB002E676D /* ApiManagerListMock.swift */,
+				E157996D293855CD002E676D /* MockNetworkTransport.swift */,
+				E157996F29385604002E676D /* MockGraphQuery.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -495,7 +501,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E157995F2937F9BC002E676D /* ApiManagerListMock.swift in Sources */,
+				E157997029385604002E676D /* MockGraphQuery.swift in Sources */,
 				E10F415F29330A600024671E /* FruitsGraphQLTests.swift in Sources */,
+				E157996E293855CD002E676D /* MockNetworkTransport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
