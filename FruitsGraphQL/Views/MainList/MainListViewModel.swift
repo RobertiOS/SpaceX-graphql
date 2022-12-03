@@ -60,7 +60,7 @@ extension MainListViewModel: MainListViewModelRepresentable {
                 self?.launchesListSubject.send(completion: .finished)
             }
         } receiveValue: { [weak self] lastConnection in
-            let launches = lastConnection.launches.compactMap({ $0 })
+            let launches = lastConnection.launches.compactMap({ $0?.fragments.launchDetails })
             self?.launches.append(contentsOf: launches)
             self?.lastConnection = lastConnection
         }.store(in: &subscriptions)
