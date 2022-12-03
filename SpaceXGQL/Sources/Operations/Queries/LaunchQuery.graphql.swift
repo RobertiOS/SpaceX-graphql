@@ -26,11 +26,11 @@ public class LaunchQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["launchId": launchId] }
 
-  public struct Data: FruitsGraphQL.SelectionSet {
+  public struct Data: SpaceXGQL.SelectionSet {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { FruitsGraphQL.Objects.Query }
+    public static var __parentType: ParentType { SpaceXGQL.Objects.Query }
     public static var __selections: [Selection] { [
       .field("launch", Launch?.self, arguments: ["id": .variable("launchId")]),
     ] }
@@ -40,11 +40,11 @@ public class LaunchQuery: GraphQLQuery {
     /// Launch
     ///
     /// Parent Type: `Launch`
-    public struct Launch: FruitsGraphQL.SelectionSet {
+    public struct Launch: SpaceXGQL.SelectionSet {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { FruitsGraphQL.Objects.Launch }
+      public static var __parentType: ParentType { SpaceXGQL.Objects.Launch }
       public static var __selections: [Selection] { [
         .fragment(LaunchDetails.self),
       ] }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import SpaceXGQL
 
 enum AppTransition {
     case mainList

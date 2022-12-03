@@ -3,7 +3,7 @@
 
 @_exported import ApolloAPI
 
-public struct LaunchDetails: FruitsGraphQL.SelectionSet, Fragment {
+public struct LaunchDetails: SpaceXGQL.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString { """
     fragment LaunchDetails on Launch {
       __typename
@@ -24,7 +24,7 @@ public struct LaunchDetails: FruitsGraphQL.SelectionSet, Fragment {
   public let __data: DataDict
   public init(data: DataDict) { __data = data }
 
-  public static var __parentType: ParentType { FruitsGraphQL.Objects.Launch }
+  public static var __parentType: ParentType { SpaceXGQL.Objects.Launch }
   public static var __selections: [Selection] { [
     .field("id", ID.self),
     .field("site", String?.self),
@@ -40,11 +40,11 @@ public struct LaunchDetails: FruitsGraphQL.SelectionSet, Fragment {
   /// Mission
   ///
   /// Parent Type: `Mission`
-  public struct Mission: FruitsGraphQL.SelectionSet {
+  public struct Mission: SpaceXGQL.SelectionSet {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { FruitsGraphQL.Objects.Mission }
+    public static var __parentType: ParentType { SpaceXGQL.Objects.Mission }
     public static var __selections: [Selection] { [
       .field("missionPatch", String?.self),
       .field("name", String?.self),
@@ -57,11 +57,11 @@ public struct LaunchDetails: FruitsGraphQL.SelectionSet, Fragment {
   /// Rocket
   ///
   /// Parent Type: `Rocket`
-  public struct Rocket: FruitsGraphQL.SelectionSet {
+  public struct Rocket: SpaceXGQL.SelectionSet {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { FruitsGraphQL.Objects.Rocket }
+    public static var __parentType: ParentType { SpaceXGQL.Objects.Rocket }
     public static var __selections: [Selection] { [
       .field("name", String?.self),
     ] }

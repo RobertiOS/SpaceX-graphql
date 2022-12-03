@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26A17812293B1FCA0061E803 /* SpaceXGQL in Frameworks */ = {isa = PBXBuildFile; productRef = 26A17811293B1FCA0061E803 /* SpaceXGQL */; };
 		E10F4130293279650024671E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E10F4132293279650024671E /* Localizable.strings */; };
 		E10F415F29330A600024671E /* FruitsGraphQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10F415E29330A600024671E /* FruitsGraphQLTests.swift */; };
 		E11150FA292FD1520041CB2B /* launchesSchema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = E11150F9292FD1510041CB2B /* launchesSchema.graphqls */; };
@@ -24,16 +25,6 @@
 		E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8085292D38040009B939 /* AppCoordinator.swift */; };
 		E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E8087292D3BAD0009B939 /* MainListViewModel.swift */; };
 		E14E8098292D4C010009B939 /* LaunchList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = E14E8097292D4C010009B939 /* LaunchList.graphql */; };
-		E15799482937B1B9002E676D /* LaunchDetails.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157993A2937B1B9002E676D /* LaunchDetails.graphql.swift */; };
-		E15799492937B1B9002E676D /* LaunchQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157993D2937B1B9002E676D /* LaunchQuery.graphql.swift */; };
-		E157994A2937B1B9002E676D /* LaunchListQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157993E2937B1B9002E676D /* LaunchListQuery.graphql.swift */; };
-		E157994B2937B1B9002E676D /* Launch.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799412937B1B9002E676D /* Launch.graphql.swift */; };
-		E157994C2937B1B9002E676D /* Rocket.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799422937B1B9002E676D /* Rocket.graphql.swift */; };
-		E157994D2937B1B9002E676D /* Mission.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799432937B1B9002E676D /* Mission.graphql.swift */; };
-		E157994E2937B1B9002E676D /* Query.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799442937B1B9002E676D /* Query.graphql.swift */; };
-		E157994F2937B1B9002E676D /* LaunchConnection.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799452937B1B9002E676D /* LaunchConnection.graphql.swift */; };
-		E15799502937B1B9002E676D /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799462937B1B9002E676D /* SchemaConfiguration.swift */; };
-		E15799512937B1B9002E676D /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799472937B1B9002E676D /* SchemaMetadata.graphql.swift */; };
 		E15799542937B262002E676D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799522937B262002E676D /* DetailViewModel.swift */; };
 		E15799552937B262002E676D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799532937B262002E676D /* DetailViewController.swift */; };
 		E15799582937B298002E676D /* APIManager+Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799562937B298002E676D /* APIManager+Detail.swift */; };
@@ -41,11 +32,6 @@
 		E157995C2937CA12002E676D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E157995B2937CA11002E676D /* DetailViewController.xib */; };
 		E157995F2937F9BC002E676D /* ApiManagerListMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157995E2937F9BB002E676D /* ApiManagerListMock.swift */; };
 		E15799612937FB58002E676D /* apollo-codegen-config.json in Resources */ = {isa = PBXBuildFile; fileRef = E15799602937FB58002E676D /* apollo-codegen-config.json */; };
-		E15799682937FC0B002E676D /* Launch+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799632937FC0B002E676D /* Launch+Mock.graphql.swift */; };
-		E15799692937FC0B002E676D /* Query+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799642937FC0B002E676D /* Query+Mock.graphql.swift */; };
-		E157996A2937FC0B002E676D /* LaunchConnection+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799652937FC0B002E676D /* LaunchConnection+Mock.graphql.swift */; };
-		E157996B2937FC0B002E676D /* Mission+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799662937FC0B002E676D /* Mission+Mock.graphql.swift */; };
-		E157996C2937FC0B002E676D /* Rocket+Mock.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15799672937FC0B002E676D /* Rocket+Mock.graphql.swift */; };
 		E157996E293855CD002E676D /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157996D293855CD002E676D /* MockNetworkTransport.swift */; };
 		E157997029385604002E676D /* MockGraphQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157996F29385604002E676D /* MockGraphQuery.swift */; };
 		E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D4C0F292F23CE00F70601 /* AppTransition.swift */; };
@@ -73,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26A1780F293B1F5D0061E803 /* SpaceXGQL */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpaceXGQL; path = ../SpaceXGQL; sourceTree = "<group>"; };
 		E10F4131293279650024671E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E10F415C29330A600024671E /* FruitsGraphQLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitsGraphQLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10F415E29330A600024671E /* FruitsGraphQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGraphQLTests.swift; sourceTree = "<group>"; };
@@ -93,16 +80,6 @@
 		E14E8085292D38040009B939 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E14E8087292D3BAD0009B939 /* MainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewModel.swift; sourceTree = "<group>"; };
 		E14E8097292D4C010009B939 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
-		E157993A2937B1B9002E676D /* LaunchDetails.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchDetails.graphql.swift; sourceTree = "<group>"; };
-		E157993D2937B1B9002E676D /* LaunchQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchQuery.graphql.swift; sourceTree = "<group>"; };
-		E157993E2937B1B9002E676D /* LaunchListQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListQuery.graphql.swift; sourceTree = "<group>"; };
-		E15799412937B1B9002E676D /* Launch.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.graphql.swift; sourceTree = "<group>"; };
-		E15799422937B1B9002E676D /* Rocket.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.graphql.swift; sourceTree = "<group>"; };
-		E15799432937B1B9002E676D /* Mission.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.graphql.swift; sourceTree = "<group>"; };
-		E15799442937B1B9002E676D /* Query.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.graphql.swift; sourceTree = "<group>"; };
-		E15799452937B1B9002E676D /* LaunchConnection.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchConnection.graphql.swift; sourceTree = "<group>"; };
-		E15799462937B1B9002E676D /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
-		E15799472937B1B9002E676D /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
 		E15799522937B262002E676D /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E15799532937B262002E676D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E15799562937B298002E676D /* APIManager+Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager+Detail.swift"; sourceTree = "<group>"; };
@@ -110,11 +87,6 @@
 		E157995B2937CA11002E676D /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E157995E2937F9BB002E676D /* ApiManagerListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerListMock.swift; sourceTree = "<group>"; };
 		E15799602937FB58002E676D /* apollo-codegen-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apollo-codegen-config.json"; sourceTree = "<group>"; };
-		E15799632937FC0B002E676D /* Launch+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Launch+Mock.graphql.swift"; sourceTree = "<group>"; };
-		E15799642937FC0B002E676D /* Query+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Query+Mock.graphql.swift"; sourceTree = "<group>"; };
-		E15799652937FC0B002E676D /* LaunchConnection+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchConnection+Mock.graphql.swift"; sourceTree = "<group>"; };
-		E15799662937FC0B002E676D /* Mission+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mission+Mock.graphql.swift"; sourceTree = "<group>"; };
-		E15799672937FC0B002E676D /* Rocket+Mock.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rocket+Mock.graphql.swift"; sourceTree = "<group>"; };
 		E157996D293855CD002E676D /* MockNetworkTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
 		E157996F29385604002E676D /* MockGraphQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGraphQuery.swift; sourceTree = "<group>"; };
 		E17D4C0F292F23CE00F70601 /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
@@ -133,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A17812293B1FCA0061E803 /* SpaceXGQL in Frameworks */,
 				E1A7D2AD293265A000C25F83 /* Collections in Frameworks */,
 				E19C5804292D6B36004C7205 /* Apollo in Frameworks */,
 				E1A7D2B1293265A000C25F83 /* OrderedCollections in Frameworks */,
@@ -143,6 +116,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A1780E293B1F5D0061E803 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				26A1780F293B1F5D0061E803 /* SpaceXGQL */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		26A17810293B1FCA0061E803 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E10F412D2932794B0024671E /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,9 +170,11 @@
 		E14E8056292D2E0D0009B939 = {
 			isa = PBXGroup;
 			children = (
+				26A1780E293B1F5D0061E803 /* Packages */,
 				E14E8061292D2E0D0009B939 /* FruitsGraphQL */,
 				E10F415D29330A600024671E /* FruitsGraphQLTests */,
 				E14E8060292D2E0D0009B939 /* Products */,
+				26A17810293B1FCA0061E803 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,64 +252,6 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
-		E15799382937B1B9002E676D /* generated */ = {
-			isa = PBXGroup;
-			children = (
-				E15799622937FC0B002E676D /* mocks */,
-				E15799392937B1B9002E676D /* Fragments */,
-				E157993B2937B1B9002E676D /* Operations */,
-				E157993F2937B1B9002E676D /* Schema */,
-			);
-			path = generated;
-			sourceTree = "<group>";
-		};
-		E15799392937B1B9002E676D /* Fragments */ = {
-			isa = PBXGroup;
-			children = (
-				E157993A2937B1B9002E676D /* LaunchDetails.graphql.swift */,
-			);
-			path = Fragments;
-			sourceTree = "<group>";
-		};
-		E157993B2937B1B9002E676D /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				E157993C2937B1B9002E676D /* Queries */,
-			);
-			path = Operations;
-			sourceTree = "<group>";
-		};
-		E157993C2937B1B9002E676D /* Queries */ = {
-			isa = PBXGroup;
-			children = (
-				E157993D2937B1B9002E676D /* LaunchQuery.graphql.swift */,
-				E157993E2937B1B9002E676D /* LaunchListQuery.graphql.swift */,
-			);
-			path = Queries;
-			sourceTree = "<group>";
-		};
-		E157993F2937B1B9002E676D /* Schema */ = {
-			isa = PBXGroup;
-			children = (
-				E15799402937B1B9002E676D /* Objects */,
-				E15799462937B1B9002E676D /* SchemaConfiguration.swift */,
-				E15799472937B1B9002E676D /* SchemaMetadata.graphql.swift */,
-			);
-			path = Schema;
-			sourceTree = "<group>";
-		};
-		E15799402937B1B9002E676D /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				E15799412937B1B9002E676D /* Launch.graphql.swift */,
-				E15799422937B1B9002E676D /* Rocket.graphql.swift */,
-				E15799432937B1B9002E676D /* Mission.graphql.swift */,
-				E15799442937B1B9002E676D /* Query.graphql.swift */,
-				E15799452937B1B9002E676D /* LaunchConnection.graphql.swift */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
 		E157995D2937F98D002E676D /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,18 +260,6 @@
 				E157996F29385604002E676D /* MockGraphQuery.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		E15799622937FC0B002E676D /* mocks */ = {
-			isa = PBXGroup;
-			children = (
-				E15799632937FC0B002E676D /* Launch+Mock.graphql.swift */,
-				E15799642937FC0B002E676D /* Query+Mock.graphql.swift */,
-				E15799652937FC0B002E676D /* LaunchConnection+Mock.graphql.swift */,
-				E15799662937FC0B002E676D /* Mission+Mock.graphql.swift */,
-				E15799672937FC0B002E676D /* Rocket+Mock.graphql.swift */,
-			);
-			path = mocks;
 			sourceTree = "<group>";
 		};
 		E17D4C0E292F237A00F70601 /* Navigation */ = {
@@ -356,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				E15799602937FB58002E676D /* apollo-codegen-config.json */,
-				E15799382937B1B9002E676D /* generated */,
 				E11150F9292FD1510041CB2B /* launchesSchema.graphqls */,
 				E14E808F292D4A550009B939 /* queries */,
 			);
@@ -403,6 +322,7 @@
 				E1A7D2AC293265A000C25F83 /* Collections */,
 				E1A7D2AE293265A000C25F83 /* DequeModule */,
 				E1A7D2B0293265A000C25F83 /* OrderedCollections */,
+				26A17811293B1FCA0061E803 /* SpaceXGQL */,
 			);
 			productName = FruitsGraphQL;
 			productReference = E14E805F292D2E0D0009B939 /* FruitsGraphQL.app */;
@@ -511,44 +431,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E157994A2937B1B9002E676D /* LaunchListQuery.graphql.swift in Sources */,
 				E17D4C12292F286D00F70601 /* APIManager.swift in Sources */,
 				E15799592937B298002E676D /* APIManager+List.swift in Sources */,
-				E15799512937B1B9002E676D /* SchemaMetadata.graphql.swift in Sources */,
 				E1D1D6872937A9D100F36D25 /* (null) in Sources */,
-				E157994E2937B1B9002E676D /* Query.graphql.swift in Sources */,
 				E15799582937B298002E676D /* APIManager+Detail.swift in Sources */,
-				E15799682937FC0B002E676D /* Launch+Mock.graphql.swift in Sources */,
 				E1D1D6842937A9D100F36D25 /* (null) in Sources */,
-				E157994C2937B1B9002E676D /* Rocket.graphql.swift in Sources */,
 				E14E8067292D2E0D0009B939 /* MainListViewController.swift in Sources */,
 				E14E8063292D2E0D0009B939 /* AppDelegate.swift in Sources */,
 				E11151002930128A0041CB2B /* TypeAliases.swift in Sources */,
 				E1D1D6832937A9D100F36D25 /* (null) in Sources */,
 				E14E807A292D2FEF0009B939 /* Coordinator.swift in Sources */,
-				E157996A2937FC0B002E676D /* LaunchConnection+Mock.graphql.swift in Sources */,
 				E14E8084292D35F80009B939 /* Router.swift in Sources */,
 				E15799542937B262002E676D /* DetailViewModel.swift in Sources */,
-				E157996B2937FC0B002E676D /* Mission+Mock.graphql.swift in Sources */,
 				E1D1D6852937A9D100F36D25 /* (null) in Sources */,
-				E15799492937B1B9002E676D /* LaunchQuery.graphql.swift in Sources */,
 				E17D4C10292F23CE00F70601 /* AppTransition.swift in Sources */,
 				E14E8088292D3BAD0009B939 /* MainListViewModel.swift in Sources */,
-				E157994B2937B1B9002E676D /* Launch.graphql.swift in Sources */,
 				E15799552937B262002E676D /* DetailViewController.swift in Sources */,
-				E15799482937B1B9002E676D /* LaunchDetails.graphql.swift in Sources */,
 				E1D1D6812937A9D100F36D25 /* (null) in Sources */,
 				E14E8086292D38040009B939 /* AppCoordinator.swift in Sources */,
-				E157994F2937B1B9002E676D /* LaunchConnection.graphql.swift in Sources */,
 				E14E806D292D2E0D0009B939 /* FruitsGraphQL.xcdatamodeld in Sources */,
 				E1D1D6822937A9D100F36D25 /* (null) in Sources */,
 				E14E8065292D2E0D0009B939 /* SceneDelegate.swift in Sources */,
 				E1123A632935BC8A00FF19B5 /* DetailViewCoordinator.swift in Sources */,
-				E15799502937B1B9002E676D /* SchemaConfiguration.swift in Sources */,
-				E157996C2937FC0B002E676D /* Rocket+Mock.graphql.swift in Sources */,
 				E14E8082292D34920009B939 /* MainListCoordinator.swift in Sources */,
-				E157994D2937B1B9002E676D /* Mission.graphql.swift in Sources */,
-				E15799692937FC0B002E676D /* Query+Mock.graphql.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,6 +753,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		26A17811293B1FCA0061E803 /* SpaceXGQL */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpaceXGQL;
+		};
 		E19C5803292D6B36004C7205 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E19C5802292D6B36004C7205 /* XCRemoteSwiftPackageReference "apollo-ios" */;

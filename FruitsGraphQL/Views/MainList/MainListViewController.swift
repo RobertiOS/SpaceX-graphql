@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SpaceXGQL
 
 class MainListViewController: UITableViewController {
     let viewModel: MainListViewModelRepresentable
@@ -17,8 +18,8 @@ class MainListViewController: UITableViewController {
 
     private let searchController = UISearchController()
 
-    typealias DataSource = UITableViewDiffableDataSource<Section, Launch>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Launch>
+    typealias DataSource = UITableViewDiffableDataSource<Section, LaunchDetails>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, LaunchDetails>
 
     var dataSource: DataSource?
 
@@ -57,15 +58,15 @@ class MainListViewController: UITableViewController {
         dataSource = DataSource(tableView: tableView) { tableView, _, itemIdentifier -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell")
             var contentConfiguration = cell?.defaultContentConfiguration()
-            contentConfiguration?.text = itemIdentifier.fragments.launchDetails.site
-            contentConfiguration?.secondaryText = itemIdentifier.fragments.launchDetails.id
+            contentConfiguration?.text = itemIdentifier.site
+            contentConfiguration?.secondaryText = itemIdentifier.id
             cell?.contentConfiguration = contentConfiguration
             return cell
         }
 
     }
 
-    func applySnapshot(items: [Launch]) {
+    func applySnapshot(items: [LaunchDetails]) {
         var snapShot = Snapshot()
         snapShot.appendSections(Section.allCases)
         snapShot.appendItems(items)
@@ -80,14 +81,14 @@ class MainListViewController: UITableViewController {
 
 extension MainListViewController: Subscriber {
 
-    typealias Input = [Launch]
+    typealias Input = [LaunchDetails]
     typealias Failure = Error
 
     func receive(subscription: Subscription) {
         subscription.request(.max(1))
     }
 
-    func receive(_ input: [Launch]) -> Subscribers.Demand {
+    func receive(_ input: [LaunchDetails]) -> Subscribers.Demand {
         applySnapshot(items: input)
         return .max(1)
     }
@@ -111,16 +112,4 @@ extension MainListViewController: UITableViewDataSourcePrefetching {
         viewModel.loadMoreLaunches()
         debugPrint(indexPaths)
     }
-}
-
-extension LaunchDetails: Hashable {
-
-    public static func == (lhs: LaunchDetails, rhs: LaunchDetails) -> Bool {
-        lhs.id == rhs.id
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(fragments.launchDetails.id)
-    }
-
 }

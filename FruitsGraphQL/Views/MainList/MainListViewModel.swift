@@ -9,9 +9,10 @@ import Foundation
 import Apollo
 import Combine
 import OrderedCollections
+import SpaceXGQL
 
 protocol MainListViewModelRepresentable: AnyObject {
-    var launchesListSubject: PassthroughSubject<[Launch], Error> { get set }
+    var launchesListSubject: PassthroughSubject<[LaunchDetails], Error> { get set }
     func loadMoreLaunches()
     func search(text: String?)
     func presentDetailView(index: Int)
@@ -19,12 +20,12 @@ protocol MainListViewModelRepresentable: AnyObject {
 
 final class MainListViewModel<R: AppRouter> {
     private let apiManager: ApiManagerListRepresentable
-    var launchesListSubject = PassthroughSubject<[Launch], Error>()
+    var launchesListSubject = PassthroughSubject<[LaunchDetails], Error>()
     private var lastConnection: LaunchListQuery.Data.Launches?
     private var subscriptions = Set<AnyCancellable>()
-    private var launches = [Launch]() {
+    private var launches = [LaunchDetails]() {
         didSet {
-            var set = OrderedSet<Launch>()
+            var set = OrderedSet<LaunchDetails>()
             set.append(contentsOf: launches)
             launchesListSubject.send(Array(set))
         }
@@ -74,14 +75,14 @@ extension MainListViewModel: MainListViewModelRepresentable {
         }
 
         let launches = launches.filter { launch in
-            launch.fragments.launchDetails.site?.localizedCaseInsensitiveContains(text) ?? false
+            launch.site?.localizedCaseInsensitiveContains(text) ?? false
         }
 
         launchesListSubject.send(launches)
     }
     
     func presentDetailView(index: Int) {
-        let id = launches[index].fragments.launchDetails.id
+        let id = launches[index].id
         router?.present(route: .detail(launchID: id))
     }
 }

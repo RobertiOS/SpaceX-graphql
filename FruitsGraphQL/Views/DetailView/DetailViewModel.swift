@@ -8,6 +8,7 @@
 import Foundation
 import Apollo
 import Combine
+import SpaceXGQL
 
 protocol DetailViewModelRepresentable: AnyObject {
     var launchSubject: PassthroughSubject<LaunchDetails, Error> { get set}

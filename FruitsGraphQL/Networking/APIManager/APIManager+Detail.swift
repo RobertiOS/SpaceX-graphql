@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Apollo
+import SpaceXGQL
 
 protocol ApiManagerDetailRepresentable: AnyObject {
     func loadDetails(launchId: ID) -> Future<LaunchDetails, Error>
@@ -16,7 +17,7 @@ protocol ApiManagerDetailRepresentable: AnyObject {
 extension APIManager: ApiManagerDetailRepresentable {
     func loadDetails(launchId: ID) -> Future<LaunchDetails, Error> {
         return Future { [weak self] promise in
-            self?.activeRequest = self?.apolloClient.fetch(query: LaunchQuery(launchId: launchId)) { result in
+            self?.activeRequest = self?.apolloClient.fetch(query: LaunchListQuery(launchId: launchId)) { result in
                 self?.activeRequest = nil
                 switch result {
                 case .success(let graphqlResult):

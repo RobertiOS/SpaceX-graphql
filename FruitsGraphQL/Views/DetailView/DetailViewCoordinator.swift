@@ -7,6 +7,7 @@
 
 import UIKit
 import Apollo
+import SpaceXGQL
 
 final class DetailViewCoordinator<R: AppRouter>: Coordinator {
     var viewController: UIViewController {

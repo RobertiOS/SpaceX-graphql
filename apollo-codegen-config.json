@@ -1,5 +1,5 @@
 {
-  "schemaName" : "FruitsGraphQL",
+  "schemaName" : "SpaceXGQL",
   "input" : {
     "operationSearchPaths" : [
       "**/*.graphql"
@@ -10,14 +10,13 @@
   },
   "output" : {
     "testMocks" : {
-      "absolute" : {
-          "path" : "./generated/mocks/"
+      "none" : {
       }
     },
     "schemaTypes" : {
-      "path" : "./generated/",
+      "path" : "./SpaceXGQL",
       "moduleType" : {
-        "other" : {
+        "swiftPackageManager" : {
         }
       }
     },

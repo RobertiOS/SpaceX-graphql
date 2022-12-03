@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Apollo
+import SpaceXGQL
 
 protocol ApiManagerListRepresentable: AnyObject {
     func loadData(cursor: GraphQLNullable<String>) -> Future<LaunchListQuery.Data.Launches, Error>

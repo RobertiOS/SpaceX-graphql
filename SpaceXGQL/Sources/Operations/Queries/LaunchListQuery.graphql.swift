@@ -31,11 +31,11 @@ public class LaunchListQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["after": after] }
 
-  public struct Data: FruitsGraphQL.SelectionSet {
+  public struct Data: SpaceXGQL.SelectionSet {
     public let __data: DataDict
     public init(data: DataDict) { __data = data }
 
-    public static var __parentType: ParentType { FruitsGraphQL.Objects.Query }
+    public static var __parentType: ParentType { SpaceXGQL.Objects.Query }
     public static var __selections: [Selection] { [
       .field("launches", Launches.self, arguments: ["after": .variable("after")]),
     ] }
@@ -45,11 +45,11 @@ public class LaunchListQuery: GraphQLQuery {
     /// Launches
     ///
     /// Parent Type: `LaunchConnection`
-    public struct Launches: FruitsGraphQL.SelectionSet {
+    public struct Launches: SpaceXGQL.SelectionSet {
       public let __data: DataDict
       public init(data: DataDict) { __data = data }
 
-      public static var __parentType: ParentType { FruitsGraphQL.Objects.LaunchConnection }
+      public static var __parentType: ParentType { SpaceXGQL.Objects.LaunchConnection }
       public static var __selections: [Selection] { [
         .field("cursor", String.self),
         .field("hasMore", Bool.self),
@@ -63,11 +63,11 @@ public class LaunchListQuery: GraphQLQuery {
       /// Launches.Launch
       ///
       /// Parent Type: `Launch`
-      public struct Launch: FruitsGraphQL.SelectionSet {
+      public struct Launch: SpaceXGQL.SelectionSet {
         public let __data: DataDict
         public init(data: DataDict) { __data = data }
 
-        public static var __parentType: ParentType { FruitsGraphQL.Objects.Launch }
+        public static var __parentType: ParentType { SpaceXGQL.Objects.Launch }
         public static var __selections: [Selection] { [
           .fragment(LaunchDetails.self),
         ] }
